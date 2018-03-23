@@ -1,33 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Forms;
 using Impinj.OctaneSdk;
-using System.Threading;
 using Org.LLRP.LTK.LLRPV1;
 using Org.LLRP.LTK.LLRPV1.DataType;
 using Org.LLRP.LTK.LLRPV1.Impinj;
-using System.Timers;
 
-namespace Главная_форма
+namespace MainForm
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    public partial class Main : Form
     {
+        public Main()
+        {
+            InitializeComponent();
+            try
+            {
+                // Вызов метода отображения информации с меток
+                //reader.TagsReported += OnTagsReported;(снять)
+            }
+            catch (OctaneSdkException ex)
+            {
+                // Ошибка пакета Octane
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                // Ошибки программы
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private ImpinjReader reader = new ImpinjReader();
         static LLRPClient readerR = new LLRPClient();
+
         static void Delete_RoSpec()
         {
             MSG_DELETE_ROSPEC msg = new MSG_DELETE_ROSPEC();
@@ -37,6 +48,7 @@ namespace Главная_форма
             MSG_DELETE_ROSPEC_RESPONSE rsp =
             readerR.DELETE_ROSPEC(msg, out msg_err, 2000);
         }
+
         static void Add_RoSpec()
         {
             MSG_ERROR_MESSAGE msg_err;
@@ -97,6 +109,7 @@ namespace Главная_форма
             MSG_ADD_ROSPEC_RESPONSE rsp =
                readerR.ADD_ROSPEC(msg, out msg_err, 2000);
         }
+
         static void Enable_RoSpec()
         {
             MSG_ERROR_MESSAGE msg_err;
@@ -105,25 +118,7 @@ namespace Главная_форма
             MSG_ENABLE_ROSPEC_RESPONSE rsp =
             readerR.ENABLE_ROSPEC(msg, out msg_err, 2000);
         }
-        public MainWindow()
-        {
-            InitializeComponent();
-            try
-            {
-                // Вызов метода отображения информации с меток
-                //reader.TagsReported += OnTagsReported;(снять)
-            }
-            catch (OctaneSdkException ex)
-            {
-                // Ошибка пакета Octane
-                MessageBox.Show(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                // Ошибки программы
-                MessageBox.Show(ex.Message);
-            }
-        }
+
         private void UpdateListbox(List<Tag> list)
         {
             // Вставка информации о метке в текущее время
@@ -131,7 +126,7 @@ namespace Главная_форма
             
             foreach (var tag in list)
             {
-                listTags.Items.Add(listTags.Items.Count + ") EPC: " + tag.Epc + "\n   Номер антенны: " + tag.AntennaPortNumber + "\n   Дата и время: " + now);
+                ListTags.Items.Add(ListTags.Items.Count + ") EPC: " + tag.Epc + "\n   Номер антенны: " + tag.AntennaPortNumber + "\n   Дата и время: " + now);
             }
         }
 
@@ -145,32 +140,21 @@ namespace Главная_форма
             //Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Normal, action);(снять)
         }
 
-        private static System.Timers.Timer aTimer;
-
         private void UpdateListah()
         {
             DateTime now = DateTime.Now;
             Random Ran = new Random();
             long Epc = Ran.Next() + 999999999999999;
             int AntennaPortNumber = Ran.Next(1, 2);
-            listTags.Items.Add(listTags.Items.Count + ") EPC: " + Epc + "\n   Номер антенны: " + AntennaPortNumber + "\n   Дата и время: " + now);
+            ListTags.Items.Add(ListTags.Items.Count + ") EPC: " + Epc + "\n   Номер антенны: " + AntennaPortNumber + "\n   Дата и время: " + now);
         }
 
-        private void SetTimer()
+        private void ButtonStart_Click(object sender, EventArgs e)
         {
-            aTimer = new System.Timers.Timer(2000);
-            // Hook up the Elapsed event for the timer.
-            //aTimer.Elapsed += UpdateListah();
-            aTimer.AutoReset = true;
-            aTimer.Enabled = true;
-        }
-
-        private void ButtonStart_Click(object sender, RoutedEventArgs e)
-        {
-            ButtonStart.IsEnabled = false;
-            ButtonStop.IsEnabled = true;
-            listTags.IsEnabled = true;
-            SetTimer();
+            ButtonStart.Enabled = false;
+            ButtonStop.Enabled = true;
+            ListTags.Enabled = true;
+            TimerTags.Enabled=true;
             try
             {
                 // Подготовка к считыванию
@@ -194,11 +178,11 @@ namespace Главная_форма
             }
         }
 
-        private void ButtonStop_Click(object sender, RoutedEventArgs e)
+        private void ButtonStop_Click(object sender, EventArgs e)
         {
-            ButtonStart.IsEnabled = true;
-            ButtonStop.IsEnabled = false;
-            aTimer.Close();
+            ButtonStart.Enabled = true;
+            ButtonStop.Enabled = false;
+            TimerTags.Enabled=false;
             try
             {
                 // Отключение считывания считывателя
@@ -220,14 +204,13 @@ namespace Главная_форма
             }
         }
 
-        private void ButtonClear_Click(object sender, RoutedEventArgs e)
+        private void ButtonClear_Click(object sender, EventArgs e)
         {
-            listTags.Items.Clear();
+            ListTags.Items.Clear();
         }
 
-        private void ButtonConnect_Click(object sender, RoutedEventArgs e)
+        private void ButtonConnect_Click(object sender, EventArgs e)
         {
-            
             try
             {
                 // Подключение к считывателю.
@@ -237,9 +220,10 @@ namespace Главная_форма
                 if (true)//reader.IsConnected(заменить на true)
                 {
                     MessageBox.Show("Считыватель подключен!");
-                    ButtonStart.IsEnabled = true;
-                    listTags.IsEnabled = true;
-                    ButtonSettings.IsEnabled = true;
+                    ButtonStart.Enabled = true;
+                    ListTags.Enabled = true;
+                    ButtonSettings.Enabled = true;
+                    ButtonClear.Enabled = true;
                     // Получение настроек по умолчанию со считывателя
                     //Settings settings = reader.QueryDefaultSettings();(снять)
                     // Подключение антенны
@@ -269,7 +253,7 @@ namespace Главная_форма
             }
         }
 
-        private void ButtonClose_Click(object sender, RoutedEventArgs e)
+        private void ButtonClose_Click(object sender, EventArgs e)
         {
             if (true)//reader.IsConnected(заменить на true)
             {
@@ -298,7 +282,7 @@ namespace Главная_форма
             Close();
         }
 
-        private void ButtonSettings_Click(object sender, RoutedEventArgs e)
+        private void ButtonSettings_Click(object sender, EventArgs e)
         {
             //FeatureSet features = reader.QueryFeatureSet();
             //Status status = reader.QueryStatus();
@@ -318,12 +302,13 @@ namespace Главная_форма
                 "Сессия: "/* + settings.Session*/);
         }
 
-        private void ButtonDisconnect_Click(object sender, RoutedEventArgs e)
+        private void ButtonDisconnect_Click(object sender, EventArgs e)
         {
             //reader.Disconnect();(снять)
-            ButtonStart.IsEnabled = false;
-            listTags.IsEnabled = false;
-            ButtonSettings.IsEnabled = false;
+            ButtonStart.Enabled = false;
+            ListTags.Enabled = false;
+            ButtonSettings.Enabled = false;
+            ButtonClear.Enabled = false;
             MessageBox.Show("Считыватель отключен!");
         }
     }

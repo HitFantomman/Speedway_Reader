@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Главная форма", "Главная форма\Главная форма.csproj", "{359331F8-B00F-446D-B86F-673CB7CA931A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoSpec", "RoSpec\RoSpec.csproj", "{45D879D0-6813-4D37-8034-3EC19011D35F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainForm", "MainForm\MainForm.csproj", "{94922041-3BD1-47D4-A49E-759F48FDEF87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +17,15 @@ Global
 		{359331F8-B00F-446D-B86F-673CB7CA931A}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{359331F8-B00F-446D-B86F-673CB7CA931A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{359331F8-B00F-446D-B86F-673CB7CA931A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{45D879D0-6813-4D37-8034-3EC19011D35F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{45D879D0-6813-4D37-8034-3EC19011D35F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{45D879D0-6813-4D37-8034-3EC19011D35F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{45D879D0-6813-4D37-8034-3EC19011D35F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94922041-3BD1-47D4-A49E-759F48FDEF87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94922041-3BD1-47D4-A49E-759F48FDEF87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94922041-3BD1-47D4-A49E-759F48FDEF87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94922041-3BD1-47D4-A49E-759F48FDEF87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D84CFE2B-1326-4DD1-9EA0-2983D42FF9F5}
 	EndGlobalSection
 EndGlobal
