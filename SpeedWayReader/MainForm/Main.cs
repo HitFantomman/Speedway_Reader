@@ -149,12 +149,17 @@ namespace MainForm
             ListTags.Items.Add(ListTags.Items.Count + ") EPC: " + Epc + "\n   Номер антенны: " + AntennaPortNumber + "\n   Дата и время: " + now);
         }
 
+        bool clac = false;
+
         private void ButtonStart_Click(object sender, EventArgs e)
         {
             ButtonStart.Enabled = false;
             ButtonStop.Enabled = true;
             ListTags.Enabled = true;
-            TimerTags.Enabled=true;
+            Random rand = new Random();
+            TimerTags.Enabled = true;
+            TimerTags.Interval = rand.Next(1000) + 4000;
+            clac=true;
             try
             {
                 // Подготовка к считыванию
@@ -182,7 +187,8 @@ namespace MainForm
         {
             ButtonStart.Enabled = true;
             ButtonStop.Enabled = false;
-            TimerTags.Enabled=false;
+            TimerTags.Enabled = false;
+            TimerTags.Enabled = false;
             try
             {
                 // Отключение считывания считывателя
@@ -267,6 +273,7 @@ namespace MainForm
                     //}(снять)
                     // Отсоединение от считывателя
                     //reader.Disconnect();(снять)
+                    Application.Exit();
                 }
                 catch (OctaneSdkException ex)
                 {
@@ -279,7 +286,6 @@ namespace MainForm
                     MessageBox.Show(ex.Message);
                 }
             }
-            Close();
         }
 
         private void ButtonSettings_Click(object sender, EventArgs e)
@@ -310,6 +316,18 @@ namespace MainForm
             ButtonSettings.Enabled = false;
             ButtonClear.Enabled = false;
             MessageBox.Show("Считыватель отключен!");
+        }
+
+        private void TimerTags_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            UpdateListah();
+        }
+
+        private void ButtonBD_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Tables table = new Tables();
+            table.Show();
         }
     }
 }

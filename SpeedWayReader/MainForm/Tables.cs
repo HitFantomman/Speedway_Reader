@@ -16,5 +16,12 @@ namespace MainForm
         {
             InitializeComponent();
         }
+
+        private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Main main = new Main();
+            main.Visible = true;
+        }
     }
 }
