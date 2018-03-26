@@ -144,12 +144,10 @@ namespace MainForm
         {
             DateTime now = DateTime.Now;
             Random Ran = new Random();
-            long Epc = Ran.Next() + 999999999999999;
-            int AntennaPortNumber = Ran.Next(1, 2);
+            long Epc = Ran.Next(1000000000)+100000000000000;
+            int AntennaPortNumber = Ran.Next(1, 3);
             ListTags.Items.Add(ListTags.Items.Count + ") EPC: " + Epc + "\n   Номер антенны: " + AntennaPortNumber + "\n   Дата и время: " + now);
         }
-
-        bool clac = false;
 
         private void ButtonStart_Click(object sender, EventArgs e)
         {
@@ -158,8 +156,7 @@ namespace MainForm
             ListTags.Enabled = true;
             Random rand = new Random();
             TimerTags.Enabled = true;
-            TimerTags.Interval = rand.Next(1000) + 4000;
-            clac=true;
+            TimerTags.Interval = rand.Next(1000, 5000);
             try
             {
                 // Подготовка к считыванию
@@ -187,7 +184,6 @@ namespace MainForm
         {
             ButtonStart.Enabled = true;
             ButtonStop.Enabled = false;
-            TimerTags.Enabled = false;
             TimerTags.Enabled = false;
             try
             {
@@ -312,9 +308,11 @@ namespace MainForm
         {
             //reader.Disconnect();(снять)
             ButtonStart.Enabled = false;
+            ButtonStop.Enabled = false;
             ListTags.Enabled = false;
             ButtonSettings.Enabled = false;
             ButtonClear.Enabled = false;
+            TimerTags.Enabled = false;
             MessageBox.Show("Считыватель отключен!");
         }
 

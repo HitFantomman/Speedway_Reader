@@ -55,7 +55,7 @@
             this.ButtonStart.Enabled = false;
             this.ButtonStart.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ButtonStart.Location = new System.Drawing.Point(13, 13);
-            this.ButtonStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonStart.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonStart.Name = "ButtonStart";
             this.ButtonStart.Size = new System.Drawing.Size(158, 38);
             this.ButtonStart.TabIndex = 0;
@@ -68,7 +68,7 @@
             this.ButtonStop.Enabled = false;
             this.ButtonStop.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ButtonStop.Location = new System.Drawing.Point(179, 13);
-            this.ButtonStop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonStop.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonStop.Name = "ButtonStop";
             this.ButtonStop.Size = new System.Drawing.Size(158, 38);
             this.ButtonStop.TabIndex = 1;
@@ -82,7 +82,7 @@
             this.ButtonSettings.Enabled = false;
             this.ButtonSettings.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ButtonSettings.Location = new System.Drawing.Point(13, 59);
-            this.ButtonSettings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonSettings.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonSettings.Name = "ButtonSettings";
             this.ButtonSettings.Size = new System.Drawing.Size(324, 42);
             this.ButtonSettings.TabIndex = 2;
@@ -95,7 +95,7 @@
             this.ButtonClear.Enabled = false;
             this.ButtonClear.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ButtonClear.Location = new System.Drawing.Point(345, 13);
-            this.ButtonClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonClear.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonClear.Name = "ButtonClear";
             this.ButtonClear.Size = new System.Drawing.Size(158, 38);
             this.ButtonClear.TabIndex = 3;
@@ -108,7 +108,7 @@
             this.ButtonConnect.AutoSize = true;
             this.ButtonConnect.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ButtonConnect.Location = new System.Drawing.Point(867, 47);
-            this.ButtonConnect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonConnect.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonConnect.Name = "ButtonConnect";
             this.ButtonConnect.Size = new System.Drawing.Size(176, 42);
             this.ButtonConnect.TabIndex = 4;
@@ -121,7 +121,7 @@
             this.ButtonDisconnect.AutoSize = true;
             this.ButtonDisconnect.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ButtonDisconnect.Location = new System.Drawing.Point(867, 97);
-            this.ButtonDisconnect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonDisconnect.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonDisconnect.Name = "ButtonDisconnect";
             this.ButtonDisconnect.Size = new System.Drawing.Size(176, 42);
             this.ButtonDisconnect.TabIndex = 5;
@@ -134,7 +134,7 @@
             this.ButtonClose.AutoSize = true;
             this.ButtonClose.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ButtonClose.Location = new System.Drawing.Point(885, 482);
-            this.ButtonClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonClose.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonClose.Name = "ButtonClose";
             this.ButtonClose.Size = new System.Drawing.Size(158, 45);
             this.ButtonClose.TabIndex = 6;
@@ -146,7 +146,7 @@
             // 
             this.TextConnect.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TextConnect.Location = new System.Drawing.Point(796, 13);
-            this.TextConnect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextConnect.Margin = new System.Windows.Forms.Padding(4);
             this.TextConnect.Name = "TextConnect";
             this.TextConnect.Size = new System.Drawing.Size(247, 26);
             this.TextConnect.TabIndex = 7;
@@ -166,7 +166,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(9, 109);
+            this.label2.Location = new System.Drawing.Point(9, 120);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(206, 19);
@@ -180,7 +180,7 @@
             this.ListTags.FormattingEnabled = true;
             this.ListTags.ItemHeight = 19;
             this.ListTags.Location = new System.Drawing.Point(13, 147);
-            this.ListTags.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ListTags.Margin = new System.Windows.Forms.Padding(4);
             this.ListTags.Name = "ListTags";
             this.ListTags.Size = new System.Drawing.Size(1030, 327);
             this.ListTags.TabIndex = 10;
@@ -190,7 +190,7 @@
             this.ButtonBD.AutoSize = true;
             this.ButtonBD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ButtonBD.Location = new System.Drawing.Point(13, 482);
-            this.ButtonBD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonBD.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonBD.Name = "ButtonBD";
             this.ButtonBD.Size = new System.Drawing.Size(154, 42);
             this.ButtonBD.TabIndex = 11;
@@ -216,7 +216,7 @@
             this.Controls.Add(this.ButtonStop);
             this.Controls.Add(this.ButtonStart);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Speedway Reader v1.0.0.0";
