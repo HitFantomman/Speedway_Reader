@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tables));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.BtnSaveHistoryVisit = new System.Windows.Forms.Button();
@@ -428,7 +428,7 @@
             this.машинаDataGridViewTextBoxColumn,
             this.типпроездаDataGridViewTextBoxColumn});
             this.dataGridViewHistoryVisit.DataSource = this.historyvisitBindingSource;
-            this.dataGridViewHistoryVisit.Location = new System.Drawing.Point(6, 6);
+            this.dataGridViewHistoryVisit.Location = new System.Drawing.Point(6, 3);
             this.dataGridViewHistoryVisit.Name = "dataGridViewHistoryVisit";
             this.dataGridViewHistoryVisit.Size = new System.Drawing.Size(988, 270);
             this.dataGridViewHistoryVisit.TabIndex = 0;
@@ -444,9 +444,9 @@
             // 
             this.датапроездаDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.датапроездаDataGridViewTextBoxColumn.DataPropertyName = "дата_проезда";
-            dataGridViewCellStyle1.Format = "f";
-            dataGridViewCellStyle1.NullValue = null;
-            this.датапроездаDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Format = "f";
+            dataGridViewCellStyle5.NullValue = null;
+            this.датапроездаDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.датапроездаDataGridViewTextBoxColumn.HeaderText = "Дата проезда";
             this.датапроездаDataGridViewTextBoxColumn.Name = "датапроездаDataGridViewTextBoxColumn";
             // 
@@ -675,7 +675,7 @@
             this.водительDataGridViewTextBoxColumn,
             this.доступвъездаDataGridViewTextBoxColumn});
             this.dataGridView3.DataSource = this.carwithRFIDBindingSource;
-            this.dataGridView3.Location = new System.Drawing.Point(8, 6);
+            this.dataGridView3.Location = new System.Drawing.Point(8, 3);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView3.Size = new System.Drawing.Size(984, 279);
@@ -697,9 +697,9 @@
             // 
             this.датазаписиDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.датазаписиDataGridViewTextBoxColumn.DataPropertyName = "Дата_записи";
-            dataGridViewCellStyle2.Format = "D";
-            dataGridViewCellStyle2.NullValue = null;
-            this.датазаписиDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Format = "D";
+            dataGridViewCellStyle6.NullValue = null;
+            this.датазаписиDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.датазаписиDataGridViewTextBoxColumn.HeaderText = "Дата_записи";
             this.датазаписиDataGridViewTextBoxColumn.Name = "датазаписиDataGridViewTextBoxColumn";
             // 
@@ -708,8 +708,8 @@
             this.epcDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.epcDataGridViewTextBoxColumn.DataPropertyName = "Epc";
             this.epcDataGridViewTextBoxColumn.DataSource = this.rFIDmetkaBindingSource;
-            dataGridViewCellStyle3.Format = "N0";
-            this.epcDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Format = "N0";
+            this.epcDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.epcDataGridViewTextBoxColumn.DisplayMember = "Epc";
             this.epcDataGridViewTextBoxColumn.HeaderText = "EPC";
             this.epcDataGridViewTextBoxColumn.Name = "epcDataGridViewTextBoxColumn";
@@ -1522,9 +1522,9 @@
             // 
             this.датарегистрацииDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.датарегистрацииDataGridViewTextBoxColumn.DataPropertyName = "Дата_регистрации";
-            dataGridViewCellStyle4.Format = "D";
-            dataGridViewCellStyle4.NullValue = null;
-            this.датарегистрацииDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Format = "D";
+            dataGridViewCellStyle8.NullValue = null;
+            this.датарегистрацииDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
             this.датарегистрацииDataGridViewTextBoxColumn.HeaderText = "Дата регистрации";
             this.датарегистрацииDataGridViewTextBoxColumn.Name = "датарегистрацииDataGridViewTextBoxColumn";
             // 
