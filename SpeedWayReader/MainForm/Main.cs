@@ -144,9 +144,34 @@ namespace MainForm
         {
             DateTime now = DateTime.Now;
             Random Ran = new Random();
-            long Epc = Ran.Next(1000000000)+100000000000000;
+            long Epc = Ran.Next(100000000, 500000000) + Ran.Next(100000000, 500000000);
+            string machine = "а" + Convert.ToString(Ran.Next(100, 1000)) + "бв";
             int AntennaPortNumber = Ran.Next(1, 3);
-            ListTags.Items.Add(ListTags.Items.Count + ") EPC: " + Epc + "\n   Номер антенны: " + AntennaPortNumber + "\n   Дата и время: " + now);
+            bool visit=new bool();
+            visit=Convert.ToBoolean(Ran.Next(0, 2));
+            string avisit;
+            if (visit==true) avisit="Разрешено";
+            else avisit="Не разрешено";
+            string tvisit;
+            if (AntennaPortNumber == 1) tvisit = "Въезд";
+            else tvisit = "Выезд";
+            //if (bdRFIDDataSet.RFID_metka.EpcColumn.Caption==EPC.)
+            //{
+                
+            //}
+            ListTags.Items.Add(ListTags.Items.Count + ") Дата и время: " + now
+                + "\n   Номер антенны: " + AntennaPortNumber
+                + "\n   EPC: " + Epc
+                + "\n   № машины: " + machine
+                + "\n   Тип проезда: " + tvisit
+                + "\n   Доступ: " + avisit);
+            //GridTags.Rows.(GridTags.Rows.GetNextRow, now, Epc, 0, AntennaPortNumber);
+            if (visit == false)
+            {
+                TimerTags.Enabled = false;
+                MessageBox.Show("Машине на проезде въезд/выезд запрещен!!!");
+                TimerTags.Enabled = true;
+            }
         }
 
         private void ButtonStart_Click(object sender, EventArgs e)
@@ -323,9 +348,16 @@ namespace MainForm
 
         private void ButtonBD_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            TimerTags.Enabled = false;
             Tables table = new Tables();
-            table.Show();
+            table.ShowDialog();
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "bdRFIDDataSet.history_visit". При необходимости она может быть перемещена или удалена.
+            this.history_visitTableAdapter.Fill(this.bdRFIDDataSet.history_visit);
+
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TimerTags = new System.Timers.Timer();
             this.ButtonStart = new System.Windows.Forms.Button();
             this.ButtonStop = new System.Windows.Forms.Button();
@@ -41,7 +42,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.ListTags = new System.Windows.Forms.ListBox();
             this.ButtonBD = new System.Windows.Forms.Button();
+            this.bdRFIDDataSet = new MainForm.bdRFIDDataSet();
+            this.historyvisitBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.history_visitTableAdapter = new MainForm.bdRFIDDataSetTableAdapters.history_visitTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.TimerTags)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdRFIDDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historyvisitBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // TimerTags
@@ -97,9 +103,9 @@
             this.ButtonClear.Location = new System.Drawing.Point(345, 13);
             this.ButtonClear.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonClear.Name = "ButtonClear";
-            this.ButtonClear.Size = new System.Drawing.Size(158, 38);
+            this.ButtonClear.Size = new System.Drawing.Size(163, 38);
             this.ButtonClear.TabIndex = 3;
-            this.ButtonClear.Text = "Очистить";
+            this.ButtonClear.Text = "Очистить историю";
             this.ButtonClear.UseVisualStyleBackColor = true;
             this.ButtonClear.Click += new System.EventHandler(this.ButtonClear_Click);
             // 
@@ -198,11 +204,25 @@
             this.ButtonBD.UseVisualStyleBackColor = true;
             this.ButtonBD.Click += new System.EventHandler(this.ButtonBD_Click);
             // 
+            // bdRFIDDataSet
+            // 
+            this.bdRFIDDataSet.DataSetName = "bdRFIDDataSet";
+            this.bdRFIDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // historyvisitBindingSource
+            // 
+            this.historyvisitBindingSource.DataMember = "history_visit";
+            this.historyvisitBindingSource.DataSource = this.bdRFIDDataSet;
+            // 
+            // history_visitTableAdapter
+            // 
+            this.history_visitTableAdapter.ClearBeforeFill = true;
+            // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1056, 534);
+            this.ControlBox = false;
             this.Controls.Add(this.ButtonBD);
             this.Controls.Add(this.ListTags);
             this.Controls.Add(this.label2);
@@ -216,11 +236,15 @@
             this.Controls.Add(this.ButtonStop);
             this.Controls.Add(this.ButtonStart);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Speedway Reader v1.0.0.0";
+            this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TimerTags)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdRFIDDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historyvisitBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,6 +265,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox ListTags;
         private System.Windows.Forms.Button ButtonBD;
+        private bdRFIDDataSet bdRFIDDataSet;
+        private System.Windows.Forms.BindingSource historyvisitBindingSource;
+        private bdRFIDDataSetTableAdapters.history_visitTableAdapter history_visitTableAdapter;
     }
 }
 
