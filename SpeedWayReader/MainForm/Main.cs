@@ -140,6 +140,7 @@ namespace MainForm
             //Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Normal, action);(снять)
         }
 
+        int counter = 1;
         private void UpdateListah()
         {
             DateTime now = DateTime.Now;
@@ -159,12 +160,9 @@ namespace MainForm
             //{
                 
             //}
-            ListTags.Items.Add(ListTags.Items.Count + ") Дата и время: " + now
-                + "\n   Номер антенны: " + AntennaPortNumber
-                + "\n   EPC: " + Epc
-                + "\n   № машины: " + machine
-                + "\n   Тип проезда: " + tvisit
-                + "\n   Доступ: " + avisit);
+            ListTags.Items.Add(counter + ") Дата и время: " + now + "\n   Номер антенны: " + AntennaPortNumber);
+            counter += 1;
+            ListTags.Items.Add("\n   EPC: " + Epc + "\n   № машины: " + machine + "\n   Тип проезда: " + tvisit + "\n   Доступ: " + avisit);
             //GridTags.Rows.(GridTags.Rows.GetNextRow, now, Epc, 0, AntennaPortNumber);
             if (visit == false)
             {

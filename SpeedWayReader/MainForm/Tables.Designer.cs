@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tables));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.BtnSaveHistoryVisit = new System.Windows.Forms.Button();
@@ -226,10 +226,11 @@
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 24);
+            this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tabControl1.Location = new System.Drawing.Point(0, 30);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1008, 449);
+            this.tabControl1.Size = new System.Drawing.Size(1009, 449);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -239,10 +240,10 @@
             this.tabPage1.Controls.Add(this.bindingNavigator1);
             this.tabPage1.Controls.Add(this.dataGridViewTypeVisit);
             this.tabPage1.Controls.Add(this.dataGridViewHistoryVisit);
-            this.tabPage1.Location = new System.Drawing.Point(4, 28);
+            this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1000, 417);
+            this.tabPage1.Size = new System.Drawing.Size(1001, 414);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "История проездов";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -250,9 +251,10 @@
             // BtnSaveHistoryVisit
             // 
             this.BtnSaveHistoryVisit.AutoSize = true;
-            this.BtnSaveHistoryVisit.Location = new System.Drawing.Point(6, 319);
+            this.BtnSaveHistoryVisit.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnSaveHistoryVisit.Location = new System.Drawing.Point(11, 310);
             this.BtnSaveHistoryVisit.Name = "BtnSaveHistoryVisit";
-            this.BtnSaveHistoryVisit.Size = new System.Drawing.Size(169, 29);
+            this.BtnSaveHistoryVisit.Size = new System.Drawing.Size(169, 32);
             this.BtnSaveHistoryVisit.TabIndex = 3;
             this.BtnSaveHistoryVisit.Text = "Сохранить";
             this.BtnSaveHistoryVisit.UseVisualStyleBackColor = true;
@@ -265,6 +267,7 @@
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
             this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.None;
+            this.bindingNavigator1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.bindingNavigator1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -279,14 +282,14 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem});
             this.bindingNavigator1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.bindingNavigator1.Location = new System.Drawing.Point(6, 282);
+            this.bindingNavigator1.Location = new System.Drawing.Point(11, 282);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(263, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(290, 25);
             this.bindingNavigator1.TabIndex = 2;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -312,7 +315,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(70, 22);
             this.bindingNavigatorCountItem.Text = "для {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
             // 
@@ -444,9 +447,9 @@
             // 
             this.датапроездаDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.датапроездаDataGridViewTextBoxColumn.DataPropertyName = "дата_проезда";
-            dataGridViewCellStyle5.Format = "f";
-            dataGridViewCellStyle5.NullValue = null;
-            this.датапроездаDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Format = "f";
+            dataGridViewCellStyle1.NullValue = null;
+            this.датапроездаDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.датапроездаDataGridViewTextBoxColumn.HeaderText = "Дата проезда";
             this.датапроездаDataGridViewTextBoxColumn.Name = "датапроездаDataGridViewTextBoxColumn";
             // 
@@ -486,10 +489,10 @@
             this.tabPage3.Controls.Add(this.bindingNavigator2);
             this.tabPage3.Controls.Add(this.dataGridView4);
             this.tabPage3.Controls.Add(this.dataGridView3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 28);
+            this.tabPage3.Location = new System.Drawing.Point(4, 31);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1000, 417);
+            this.tabPage3.Size = new System.Drawing.Size(1001, 414);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Машины с RFID";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -499,7 +502,7 @@
             this.BtnSaveCarWithRFID.AutoSize = true;
             this.BtnSaveCarWithRFID.Location = new System.Drawing.Point(8, 319);
             this.BtnSaveCarWithRFID.Name = "BtnSaveCarWithRFID";
-            this.BtnSaveCarWithRFID.Size = new System.Drawing.Size(169, 29);
+            this.BtnSaveCarWithRFID.Size = new System.Drawing.Size(169, 32);
             this.BtnSaveCarWithRFID.TabIndex = 4;
             this.BtnSaveCarWithRFID.Text = "Сохранить";
             this.BtnSaveCarWithRFID.UseVisualStyleBackColor = true;
@@ -697,9 +700,9 @@
             // 
             this.датазаписиDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.датазаписиDataGridViewTextBoxColumn.DataPropertyName = "Дата_записи";
-            dataGridViewCellStyle6.Format = "D";
-            dataGridViewCellStyle6.NullValue = null;
-            this.датазаписиDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Format = "D";
+            dataGridViewCellStyle2.NullValue = null;
+            this.датазаписиDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.датазаписиDataGridViewTextBoxColumn.HeaderText = "Дата_записи";
             this.датазаписиDataGridViewTextBoxColumn.Name = "датазаписиDataGridViewTextBoxColumn";
             // 
@@ -708,8 +711,8 @@
             this.epcDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.epcDataGridViewTextBoxColumn.DataPropertyName = "Epc";
             this.epcDataGridViewTextBoxColumn.DataSource = this.rFIDmetkaBindingSource;
-            dataGridViewCellStyle7.Format = "N0";
-            this.epcDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Format = "N0";
+            this.epcDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.epcDataGridViewTextBoxColumn.DisplayMember = "Epc";
             this.epcDataGridViewTextBoxColumn.HeaderText = "EPC";
             this.epcDataGridViewTextBoxColumn.Name = "epcDataGridViewTextBoxColumn";
@@ -768,9 +771,9 @@
             this.tabPage5.Controls.Add(this.BtnSaveChauffeur);
             this.tabPage5.Controls.Add(this.bindingNavigator3);
             this.tabPage5.Controls.Add(this.dataGridView5);
-            this.tabPage5.Location = new System.Drawing.Point(4, 28);
+            this.tabPage5.Location = new System.Drawing.Point(4, 31);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1000, 417);
+            this.tabPage5.Size = new System.Drawing.Size(1001, 414);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Водители";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -780,7 +783,7 @@
             this.BtnSaveChauffeur.AutoSize = true;
             this.BtnSaveChauffeur.Location = new System.Drawing.Point(8, 278);
             this.BtnSaveChauffeur.Name = "BtnSaveChauffeur";
-            this.BtnSaveChauffeur.Size = new System.Drawing.Size(169, 29);
+            this.BtnSaveChauffeur.Size = new System.Drawing.Size(169, 32);
             this.BtnSaveChauffeur.TabIndex = 5;
             this.BtnSaveChauffeur.Text = "Сохранить";
             this.BtnSaveChauffeur.UseVisualStyleBackColor = true;
@@ -965,9 +968,9 @@
             this.tabPage6.Controls.Add(this.bindingNavigator4);
             this.tabPage6.Controls.Add(this.dataGridView7);
             this.tabPage6.Controls.Add(this.dataGridView6);
-            this.tabPage6.Location = new System.Drawing.Point(4, 28);
+            this.tabPage6.Location = new System.Drawing.Point(4, 31);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1000, 417);
+            this.tabPage6.Size = new System.Drawing.Size(1001, 414);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Машины в базе";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -977,7 +980,7 @@
             this.BtnSaveTypeCar.AutoSize = true;
             this.BtnSaveTypeCar.Location = new System.Drawing.Point(632, 277);
             this.BtnSaveTypeCar.Name = "BtnSaveTypeCar";
-            this.BtnSaveTypeCar.Size = new System.Drawing.Size(169, 29);
+            this.BtnSaveTypeCar.Size = new System.Drawing.Size(169, 32);
             this.BtnSaveTypeCar.TabIndex = 6;
             this.BtnSaveTypeCar.Text = "Сохранить";
             this.BtnSaveTypeCar.UseVisualStyleBackColor = true;
@@ -988,7 +991,7 @@
             this.BtnSaveCars.AutoSize = true;
             this.BtnSaveCars.Location = new System.Drawing.Point(8, 277);
             this.BtnSaveCars.Name = "BtnSaveCars";
-            this.BtnSaveCars.Size = new System.Drawing.Size(169, 29);
+            this.BtnSaveCars.Size = new System.Drawing.Size(169, 32);
             this.BtnSaveCars.TabIndex = 5;
             this.BtnSaveCars.Text = "Сохранить";
             this.BtnSaveCars.UseVisualStyleBackColor = true;
@@ -1313,9 +1316,9 @@
             this.tabPage7.Controls.Add(this.bindingNavigator6);
             this.tabPage7.Controls.Add(this.dataGridView9);
             this.tabPage7.Controls.Add(this.dataGridView8);
-            this.tabPage7.Location = new System.Drawing.Point(4, 28);
+            this.tabPage7.Location = new System.Drawing.Point(4, 31);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1000, 417);
+            this.tabPage7.Size = new System.Drawing.Size(1001, 414);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "RFID-метка";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1325,7 +1328,7 @@
             this.BtnSaveRFIDMetka.AutoSize = true;
             this.BtnSaveRFIDMetka.Location = new System.Drawing.Point(8, 299);
             this.BtnSaveRFIDMetka.Name = "BtnSaveRFIDMetka";
-            this.BtnSaveRFIDMetka.Size = new System.Drawing.Size(169, 29);
+            this.BtnSaveRFIDMetka.Size = new System.Drawing.Size(169, 32);
             this.BtnSaveRFIDMetka.TabIndex = 6;
             this.BtnSaveRFIDMetka.Text = "Сохранить";
             this.BtnSaveRFIDMetka.UseVisualStyleBackColor = true;
@@ -1522,9 +1525,9 @@
             // 
             this.датарегистрацииDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.датарегистрацииDataGridViewTextBoxColumn.DataPropertyName = "Дата_регистрации";
-            dataGridViewCellStyle8.Format = "D";
-            dataGridViewCellStyle8.NullValue = null;
-            this.датарегистрацииDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Format = "D";
+            dataGridViewCellStyle4.NullValue = null;
+            this.датарегистрацииDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.датарегистрацииDataGridViewTextBoxColumn.HeaderText = "Дата регистрации";
             this.датарегистрацииDataGridViewTextBoxColumn.Name = "датарегистрацииDataGridViewTextBoxColumn";
             // 
@@ -1546,14 +1549,15 @@
             this.закрытьToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1008, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1009, 30);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // закрытьToolStripMenuItem
             // 
+            this.закрытьToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.закрытьToolStripMenuItem.Name = "закрытьToolStripMenuItem";
-            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(97, 26);
             this.закрытьToolStripMenuItem.Text = "Закрыть";
             this.закрытьToolStripMenuItem.Click += new System.EventHandler(this.закрытьToolStripMenuItem_Click);
             // 
@@ -1597,7 +1601,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 473);
+            this.ClientSize = new System.Drawing.Size(1009, 479);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));

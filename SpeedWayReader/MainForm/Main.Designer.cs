@@ -59,7 +59,7 @@
             // ButtonStart
             // 
             this.ButtonStart.Enabled = false;
-            this.ButtonStart.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ButtonStart.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ButtonStart.Location = new System.Drawing.Point(13, 13);
             this.ButtonStart.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonStart.Name = "ButtonStart";
@@ -72,7 +72,7 @@
             // ButtonStop
             // 
             this.ButtonStop.Enabled = false;
-            this.ButtonStop.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ButtonStop.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ButtonStop.Location = new System.Drawing.Point(179, 13);
             this.ButtonStop.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonStop.Name = "ButtonStop";
@@ -86,7 +86,7 @@
             // 
             this.ButtonSettings.AutoSize = true;
             this.ButtonSettings.Enabled = false;
-            this.ButtonSettings.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ButtonSettings.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ButtonSettings.Location = new System.Drawing.Point(13, 59);
             this.ButtonSettings.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonSettings.Name = "ButtonSettings";
@@ -99,11 +99,11 @@
             // ButtonClear
             // 
             this.ButtonClear.Enabled = false;
-            this.ButtonClear.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ButtonClear.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ButtonClear.Location = new System.Drawing.Point(345, 13);
             this.ButtonClear.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonClear.Name = "ButtonClear";
-            this.ButtonClear.Size = new System.Drawing.Size(163, 38);
+            this.ButtonClear.Size = new System.Drawing.Size(206, 38);
             this.ButtonClear.TabIndex = 3;
             this.ButtonClear.Text = "Очистить историю";
             this.ButtonClear.UseVisualStyleBackColor = true;
@@ -112,7 +112,7 @@
             // ButtonConnect
             // 
             this.ButtonConnect.AutoSize = true;
-            this.ButtonConnect.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ButtonConnect.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ButtonConnect.Location = new System.Drawing.Point(867, 47);
             this.ButtonConnect.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonConnect.Name = "ButtonConnect";
@@ -125,7 +125,7 @@
             // ButtonDisconnect
             // 
             this.ButtonDisconnect.AutoSize = true;
-            this.ButtonDisconnect.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ButtonDisconnect.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ButtonDisconnect.Location = new System.Drawing.Point(867, 97);
             this.ButtonDisconnect.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonDisconnect.Name = "ButtonDisconnect";
@@ -138,7 +138,7 @@
             // ButtonClose
             // 
             this.ButtonClose.AutoSize = true;
-            this.ButtonClose.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ButtonClose.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ButtonClose.Location = new System.Drawing.Point(885, 482);
             this.ButtonClose.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonClose.Name = "ButtonClose";
@@ -150,51 +150,53 @@
             // 
             // TextConnect
             // 
-            this.TextConnect.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextConnect.BackColor = System.Drawing.SystemColors.Window;
+            this.TextConnect.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TextConnect.Location = new System.Drawing.Point(796, 13);
             this.TextConnect.Margin = new System.Windows.Forms.Padding(4);
             this.TextConnect.Name = "TextConnect";
-            this.TextConnect.Size = new System.Drawing.Size(247, 26);
+            this.TextConnect.Size = new System.Drawing.Size(247, 29);
             this.TextConnect.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(613, 13);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(559, 13);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 19);
+            this.label1.Size = new System.Drawing.Size(229, 22);
             this.label1.TabIndex = 8;
             this.label1.Text = "IP или имя считывателя:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(9, 120);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(206, 19);
+            this.label2.Size = new System.Drawing.Size(264, 22);
             this.label2.TabIndex = 9;
             this.label2.Text = "История обнаружения меток:";
             // 
             // ListTags
             // 
+            this.ListTags.BackColor = System.Drawing.SystemColors.Window;
             this.ListTags.Enabled = false;
-            this.ListTags.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListTags.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ListTags.FormattingEnabled = true;
-            this.ListTags.ItemHeight = 19;
+            this.ListTags.ItemHeight = 22;
             this.ListTags.Location = new System.Drawing.Point(13, 147);
             this.ListTags.Margin = new System.Windows.Forms.Padding(4);
             this.ListTags.Name = "ListTags";
-            this.ListTags.Size = new System.Drawing.Size(1030, 327);
+            this.ListTags.Size = new System.Drawing.Size(1030, 312);
             this.ListTags.TabIndex = 10;
             // 
             // ButtonBD
             // 
             this.ButtonBD.AutoSize = true;
-            this.ButtonBD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ButtonBD.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ButtonBD.Location = new System.Drawing.Point(13, 482);
             this.ButtonBD.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonBD.Name = "ButtonBD";
