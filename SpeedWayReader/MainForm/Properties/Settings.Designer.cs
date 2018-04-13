@@ -26,7 +26,7 @@ namespace MainForm.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("User Id=root;Host=localhost;Port=3307;Database=bdRFID")]
+        [global::System.Configuration.DefaultSettingValueAttribute("User Id=root;Host=localhost;Port=3307;Database=bdRFID;Unicode=True")]
         public string bdRFIDConnectionString {
             get {
                 return ((string)(this["bdRFIDConnectionString"]));
@@ -36,10 +36,10 @@ namespace MainForm.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("User Id=root;Host=localhost;Port=3307;Database=bdRFID;Unicode=True")]
-        public string bdRFIDConnectionString1 {
+        [global::System.Configuration.DefaultSettingValueAttribute("User Id=root;Host=localhost;Port=3307;Database=SystemRFID;Unicode=True")]
+        public string SystemRFIDConnectionString {
             get {
-                return ((string)(this["bdRFIDConnectionString1"]));
+                return ((string)(this["SystemRFIDConnectionString"]));
             }
         }
     }

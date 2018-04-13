@@ -20,30 +20,28 @@ namespace MainForm
         private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            Main main = new Main();
-            main.ShowDialog();
         }
 
         private void Tables_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "bdRFIDDataSet.RFID_metka". При необходимости она может быть перемещена или удалена.
-            this.rFID_metkaTableAdapter.Fill(this.bdRFIDDataSet.RFID_metka);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "bdRFIDDataSet.status_active". При необходимости она может быть перемещена или удалена.
-            this.status_activeTableAdapter.Fill(this.bdRFIDDataSet.status_active);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "bdRFIDDataSet.type_car". При необходимости она может быть перемещена или удалена.
-            this.type_carTableAdapter.Fill(this.bdRFIDDataSet.type_car);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "bdRFIDDataSet.cars". При необходимости она может быть перемещена или удалена.
-            this.carsTableAdapter.Fill(this.bdRFIDDataSet.cars);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "bdRFIDDataSet.chauffeur". При необходимости она может быть перемещена или удалена.
-            this.chauffeurTableAdapter.Fill(this.bdRFIDDataSet.chauffeur);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "bdRFIDDataSet.access_visit". При необходимости она может быть перемещена или удалена.
-            this.access_visitTableAdapter.Fill(this.bdRFIDDataSet.access_visit);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "bdRFIDDataSet.car_with_RFID". При необходимости она может быть перемещена или удалена.
-            this.car_with_RFIDTableAdapter.Fill(this.bdRFIDDataSet.car_with_RFID);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "bdRFIDDataSet.visit_type". При необходимости она может быть перемещена или удалена.
-            this.visit_typeTableAdapter.Fill(this.bdRFIDDataSet.visit_type);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "bdRFIDDataSet.history_visit". При необходимости она может быть перемещена или удалена.
-            this.history_visitTableAdapter.Fill(this.bdRFIDDataSet.history_visit);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "systemRFIDDataSet.access_visit". При необходимости она может быть перемещена или удалена.
+            this.access_visitTableAdapter.Fill(this.systemRFIDDataSet.access_visit);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "systemRFIDDataSet.status_active". При необходимости она может быть перемещена или удалена.
+            this.status_activeTableAdapter.Fill(this.systemRFIDDataSet.status_active);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "systemRFIDDataSet.RFID_metka". При необходимости она может быть перемещена или удалена.
+            this.rFID_metkaTableAdapter.Fill(this.systemRFIDDataSet.RFID_metka);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "systemRFIDDataSet.type_car". При необходимости она может быть перемещена или удалена.
+            this.type_carTableAdapter.Fill(this.systemRFIDDataSet.type_car);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "systemRFIDDataSet.cars". При необходимости она может быть перемещена или удалена.
+            this.carsTableAdapter.Fill(this.systemRFIDDataSet.cars);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "systemRFIDDataSet.chauffeur". При необходимости она может быть перемещена или удалена.
+            this.chauffeurTableAdapter.Fill(this.systemRFIDDataSet.chauffeur);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "systemRFIDDataSet.cars_with_RFID". При необходимости она может быть перемещена или удалена.
+            this.cars_with_RFIDTableAdapter.Fill(this.systemRFIDDataSet.cars_with_RFID);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "systemRFIDDataSet.type_visit". При необходимости она может быть перемещена или удалена.
+            this.type_visitTableAdapter.Fill(this.systemRFIDDataSet.type_visit);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "systemRFIDDataSet.history_visit". При необходимости она может быть перемещена или удалена.
+            this.history_visitTableAdapter.Fill(this.systemRFIDDataSet.history_visit);
 
         }
 
@@ -51,42 +49,42 @@ namespace MainForm
         {
             this.Validate();
             this.historyvisitBindingSource.EndEdit();
-            this.history_visitTableAdapter.Update(bdRFIDDataSet);
+            this.history_visitTableAdapter.Update(systemRFIDDataSet);
         }
 
         private void BtnSaveCarWithRFID_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.carwithRFIDBindingSource.EndEdit();
-            this.car_with_RFIDTableAdapter.Update(bdRFIDDataSet);
+            this.carswithRFIDBindingSource.EndEdit();
+            this.cars_with_RFIDTableAdapter.Update(systemRFIDDataSet);
         }
 
         private void BtnSaveChauffeur_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.chauffeurBindingSource.EndEdit();
-            this.chauffeurTableAdapter.Update(bdRFIDDataSet);
+            this.chauffeurTableAdapter.Update(systemRFIDDataSet);
         }
 
         private void BtnSaveCars_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.carsBindingSource.EndEdit();
-            this.carsTableAdapter.Update(bdRFIDDataSet);
+            this.carsTableAdapter.Update(systemRFIDDataSet);
         }
 
         private void BtnSaveTypeCar_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.typecarBindingSource.EndEdit();
-            this.type_carTableAdapter.Update(bdRFIDDataSet);
+            this.type_carTableAdapter.Update(systemRFIDDataSet);
         }
 
         private void BtnSaveRFIDMetka_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.rFIDmetkaBindingSource.EndEdit();
-            this.rFID_metkaTableAdapter.Update(bdRFIDDataSet);
+            this.rFID_metkaTableAdapter.Update(systemRFIDDataSet);
         }
     }
 }

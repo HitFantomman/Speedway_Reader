@@ -80,11 +80,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="bdRFIDDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>bdRFIDDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +88,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemRFIDDataSet.cs">
+      <DependentUpon>SystemRFIDDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SystemRFIDDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SystemRFIDDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Tables.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,17 +119,6 @@
     <EmbeddedResource Include="Tables.resx">
       <DependentUpon>Tables.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="bdRFIDDataSet.xsc">
-      <DependentUpon>bdRFIDDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="bdRFIDDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>bdRFIDDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="bdRFIDDataSet.xss">
-      <DependentUpon>bdRFIDDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -136,6 +129,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SystemRFIDDataSet.xsc">
+      <DependentUpon>SystemRFIDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SystemRFIDDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SystemRFIDDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SystemRFIDDataSet.xss">
+      <DependentUpon>SystemRFIDDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

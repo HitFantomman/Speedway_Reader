@@ -30,17 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tables));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.BtnSaveHistoryVisit = new System.Windows.Forms.Button();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.historyvisitBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bdRFIDDataSet = new MainForm.bdRFIDDataSet();
+            this.systemRFIDDataSet = new MainForm.SystemRFIDDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -51,21 +51,16 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.BtnSaveHistoryVisit = new System.Windows.Forms.Button();
             this.dataGridViewTypeVisit = new System.Windows.Forms.DataGridView();
             this.кодDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.типпроездаDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.visittypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.типDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typevisitBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewHistoryVisit = new System.Windows.Forms.DataGridView();
-            this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.датапроездаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.машинаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.carsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.типпроездаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.carswithRFIDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.BtnSaveCarWithRFID = new System.Windows.Forms.Button();
             this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem1 = new System.Windows.Forms.ToolStripButton();
-            this.carwithRFIDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
@@ -76,8 +71,9 @@
             this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.BtnSaveCarWithRFID = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.кодDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.кодDataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.доступDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.accessvisitBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
@@ -86,11 +82,11 @@
             this.epcDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.rFIDmetkaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.машиныDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.carsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.водительDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.chauffeurBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.доступвъездаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.доступпроездаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.BtnSaveChauffeur = new System.Windows.Forms.Button();
             this.bindingNavigator3 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem2 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem2 = new System.Windows.Forms.ToolStripLabel();
@@ -103,15 +99,14 @@
             this.bindingNavigatorMoveNextItem2 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem2 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.BtnSaveChauffeur = new System.Windows.Forms.Button();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.кодDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.кодDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.фамилияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.имяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.отчествоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.водительскихправDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.BtnSaveTypeCar = new System.Windows.Forms.Button();
-            this.BtnSaveCars = new System.Windows.Forms.Button();
             this.bindingNavigator5 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem4 = new System.Windows.Forms.ToolStripButton();
             this.typecarBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -137,15 +132,16 @@
             this.bindingNavigatorMoveNextItem3 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem3 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.BtnSaveTypeCar = new System.Windows.Forms.Button();
+            this.BtnSaveCars = new System.Windows.Forms.Button();
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
-            this.кодDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.типмашиныDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.кодDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.типDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.кодDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.машиныDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.типмашиныDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.BtnSaveRFIDMetka = new System.Windows.Forms.Button();
             this.bindingNavigator6 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem5 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem5 = new System.Windows.Forms.ToolStripLabel();
@@ -158,44 +154,49 @@
             this.bindingNavigatorMoveNextItem5 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem5 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator17 = new System.Windows.Forms.ToolStripSeparator();
+            this.BtnSaveRFIDMetka = new System.Windows.Forms.Button();
             this.dataGridView9 = new System.Windows.Forms.DataGridView();
             this.кодDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.статусDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusactiveBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView8 = new System.Windows.Forms.DataGridView();
-            this.кодDataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.кодDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.epcDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.датарегистрацииDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.статусактивностиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.закрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.history_visitTableAdapter = new MainForm.bdRFIDDataSetTableAdapters.history_visitTableAdapter();
-            this.visit_typeTableAdapter = new MainForm.bdRFIDDataSetTableAdapters.visit_typeTableAdapter();
-            this.car_with_RFIDTableAdapter = new MainForm.bdRFIDDataSetTableAdapters.car_with_RFIDTableAdapter();
-            this.access_visitTableAdapter = new MainForm.bdRFIDDataSetTableAdapters.access_visitTableAdapter();
-            this.chauffeurTableAdapter = new MainForm.bdRFIDDataSetTableAdapters.chauffeurTableAdapter();
-            this.carsTableAdapter = new MainForm.bdRFIDDataSetTableAdapters.carsTableAdapter();
-            this.type_carTableAdapter = new MainForm.bdRFIDDataSetTableAdapters.type_carTableAdapter();
-            this.status_activeTableAdapter = new MainForm.bdRFIDDataSetTableAdapters.status_activeTableAdapter();
-            this.rFID_metkaTableAdapter = new MainForm.bdRFIDDataSetTableAdapters.RFID_metkaTableAdapter();
+            this.history_visitTableAdapter = new MainForm.SystemRFIDDataSetTableAdapters.history_visitTableAdapter();
+            this.type_visitTableAdapter = new MainForm.SystemRFIDDataSetTableAdapters.type_visitTableAdapter();
+            this.cars_with_RFIDTableAdapter = new MainForm.SystemRFIDDataSetTableAdapters.cars_with_RFIDTableAdapter();
+            this.chauffeurTableAdapter = new MainForm.SystemRFIDDataSetTableAdapters.chauffeurTableAdapter();
+            this.carsTableAdapter = new MainForm.SystemRFIDDataSetTableAdapters.carsTableAdapter();
+            this.type_carTableAdapter = new MainForm.SystemRFIDDataSetTableAdapters.type_carTableAdapter();
+            this.rFID_metkaTableAdapter = new MainForm.SystemRFIDDataSetTableAdapters.RFID_metkaTableAdapter();
+            this.status_activeTableAdapter = new MainForm.SystemRFIDDataSetTableAdapters.status_activeTableAdapter();
+            this.access_visitTableAdapter = new MainForm.SystemRFIDDataSetTableAdapters.access_visitTableAdapter();
+            this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.датапроездаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.машинаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.типпроездаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.historyvisitBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdRFIDDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemRFIDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTypeVisit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.visittypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typevisitBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistoryVisit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carswithRFIDBindingSource)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
             this.bindingNavigator2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.carwithRFIDBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessvisitBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rFIDmetkaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chauffeurBindingSource)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator3)).BeginInit();
@@ -236,8 +237,8 @@
             // tabPage1
             // 
             this.tabPage1.AutoScroll = true;
-            this.tabPage1.Controls.Add(this.BtnSaveHistoryVisit);
             this.tabPage1.Controls.Add(this.bindingNavigator1);
+            this.tabPage1.Controls.Add(this.BtnSaveHistoryVisit);
             this.tabPage1.Controls.Add(this.dataGridViewTypeVisit);
             this.tabPage1.Controls.Add(this.dataGridViewHistoryVisit);
             this.tabPage1.Location = new System.Drawing.Point(4, 31);
@@ -248,18 +249,6 @@
             this.tabPage1.Text = "История проездов";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // BtnSaveHistoryVisit
-            // 
-            this.BtnSaveHistoryVisit.AutoSize = true;
-            this.BtnSaveHistoryVisit.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnSaveHistoryVisit.Location = new System.Drawing.Point(11, 310);
-            this.BtnSaveHistoryVisit.Name = "BtnSaveHistoryVisit";
-            this.BtnSaveHistoryVisit.Size = new System.Drawing.Size(169, 32);
-            this.BtnSaveHistoryVisit.TabIndex = 3;
-            this.BtnSaveHistoryVisit.Text = "Сохранить";
-            this.BtnSaveHistoryVisit.UseVisualStyleBackColor = true;
-            this.BtnSaveHistoryVisit.Click += new System.EventHandler(this.ButtonSave_Click);
-            // 
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
@@ -267,8 +256,6 @@
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
             this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.None;
-            this.bindingNavigator1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bindingNavigator1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -281,7 +268,6 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem});
-            this.bindingNavigator1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.bindingNavigator1.Location = new System.Drawing.Point(11, 282);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -289,8 +275,8 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(290, 25);
-            this.bindingNavigator1.TabIndex = 2;
+            this.bindingNavigator1.Size = new System.Drawing.Size(263, 25);
+            this.bindingNavigator1.TabIndex = 4;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
             // bindingNavigatorAddNewItem
@@ -305,17 +291,17 @@
             // historyvisitBindingSource
             // 
             this.historyvisitBindingSource.DataMember = "history_visit";
-            this.historyvisitBindingSource.DataSource = this.bdRFIDDataSet;
+            this.historyvisitBindingSource.DataSource = this.systemRFIDDataSet;
             // 
-            // bdRFIDDataSet
+            // systemRFIDDataSet
             // 
-            this.bdRFIDDataSet.DataSetName = "bdRFIDDataSet";
-            this.bdRFIDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.systemRFIDDataSet.DataSetName = "SystemRFIDDataSet";
+            this.systemRFIDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(70, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
             this.bindingNavigatorCountItem.Text = "для {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
             // 
@@ -388,38 +374,52 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // BtnSaveHistoryVisit
+            // 
+            this.BtnSaveHistoryVisit.AutoSize = true;
+            this.BtnSaveHistoryVisit.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnSaveHistoryVisit.Location = new System.Drawing.Point(11, 310);
+            this.BtnSaveHistoryVisit.Name = "BtnSaveHistoryVisit";
+            this.BtnSaveHistoryVisit.Size = new System.Drawing.Size(169, 32);
+            this.BtnSaveHistoryVisit.TabIndex = 3;
+            this.BtnSaveHistoryVisit.Text = "Сохранить";
+            this.BtnSaveHistoryVisit.UseVisualStyleBackColor = true;
+            this.BtnSaveHistoryVisit.Click += new System.EventHandler(this.ButtonSave_Click);
+            // 
             // dataGridViewTypeVisit
             // 
             this.dataGridViewTypeVisit.AutoGenerateColumns = false;
             this.dataGridViewTypeVisit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTypeVisit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.кодDataGridViewTextBoxColumn1,
-            this.типпроездаDataGridViewTextBoxColumn1});
-            this.dataGridViewTypeVisit.DataSource = this.visittypeBindingSource;
+            this.типDataGridViewTextBoxColumn});
+            this.dataGridViewTypeVisit.DataSource = this.typevisitBindingSource;
             this.dataGridViewTypeVisit.Enabled = false;
             this.dataGridViewTypeVisit.Location = new System.Drawing.Point(638, 282);
             this.dataGridViewTypeVisit.Name = "dataGridViewTypeVisit";
-            this.dataGridViewTypeVisit.Size = new System.Drawing.Size(356, 129);
+            this.dataGridViewTypeVisit.Size = new System.Drawing.Size(360, 129);
             this.dataGridViewTypeVisit.TabIndex = 1;
             // 
             // кодDataGridViewTextBoxColumn1
             // 
             this.кодDataGridViewTextBoxColumn1.DataPropertyName = "код";
             this.кодDataGridViewTextBoxColumn1.HeaderText = "код";
+            this.кодDataGridViewTextBoxColumn1.MinimumWidth = 2;
             this.кодDataGridViewTextBoxColumn1.Name = "кодDataGridViewTextBoxColumn1";
-            this.кодDataGridViewTextBoxColumn1.Visible = false;
+            this.кодDataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.кодDataGridViewTextBoxColumn1.Width = 2;
             // 
-            // типпроездаDataGridViewTextBoxColumn1
+            // типDataGridViewTextBoxColumn
             // 
-            this.типпроездаDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.типпроездаDataGridViewTextBoxColumn1.DataPropertyName = "тип_проезда";
-            this.типпроездаDataGridViewTextBoxColumn1.HeaderText = "Тип проезда";
-            this.типпроездаDataGridViewTextBoxColumn1.Name = "типпроездаDataGridViewTextBoxColumn1";
+            this.типDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.типDataGridViewTextBoxColumn.DataPropertyName = "тип";
+            this.типDataGridViewTextBoxColumn.HeaderText = "тип";
+            this.типDataGridViewTextBoxColumn.Name = "типDataGridViewTextBoxColumn";
             // 
-            // visittypeBindingSource
+            // typevisitBindingSource
             // 
-            this.visittypeBindingSource.DataMember = "visit_type";
-            this.visittypeBindingSource.DataSource = this.bdRFIDDataSet;
+            this.typevisitBindingSource.DataMember = "type_visit";
+            this.typevisitBindingSource.DataSource = this.systemRFIDDataSet;
             // 
             // dataGridViewHistoryVisit
             // 
@@ -431,62 +431,21 @@
             this.машинаDataGridViewTextBoxColumn,
             this.типпроездаDataGridViewTextBoxColumn});
             this.dataGridViewHistoryVisit.DataSource = this.historyvisitBindingSource;
-            this.dataGridViewHistoryVisit.Location = new System.Drawing.Point(6, 3);
+            this.dataGridViewHistoryVisit.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewHistoryVisit.Name = "dataGridViewHistoryVisit";
-            this.dataGridViewHistoryVisit.Size = new System.Drawing.Size(988, 270);
+            this.dataGridViewHistoryVisit.Size = new System.Drawing.Size(995, 270);
             this.dataGridViewHistoryVisit.TabIndex = 0;
             // 
-            // кодDataGridViewTextBoxColumn
+            // carswithRFIDBindingSource
             // 
-            this.кодDataGridViewTextBoxColumn.DataPropertyName = "код";
-            this.кодDataGridViewTextBoxColumn.HeaderText = "код";
-            this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
-            this.кодDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // датапроездаDataGridViewTextBoxColumn
-            // 
-            this.датапроездаDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.датапроездаDataGridViewTextBoxColumn.DataPropertyName = "дата_проезда";
-            dataGridViewCellStyle1.Format = "f";
-            dataGridViewCellStyle1.NullValue = null;
-            this.датапроездаDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.датапроездаDataGridViewTextBoxColumn.HeaderText = "Дата проезда";
-            this.датапроездаDataGridViewTextBoxColumn.Name = "датапроездаDataGridViewTextBoxColumn";
-            // 
-            // машинаDataGridViewTextBoxColumn
-            // 
-            this.машинаDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.машинаDataGridViewTextBoxColumn.DataPropertyName = "машина";
-            this.машинаDataGridViewTextBoxColumn.DataSource = this.carsBindingSource;
-            this.машинаDataGridViewTextBoxColumn.DisplayMember = "№_машины";
-            this.машинаDataGridViewTextBoxColumn.HeaderText = "Машина";
-            this.машинаDataGridViewTextBoxColumn.Name = "машинаDataGridViewTextBoxColumn";
-            this.машинаDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.машинаDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.машинаDataGridViewTextBoxColumn.ValueMember = "код";
-            // 
-            // carsBindingSource
-            // 
-            this.carsBindingSource.DataMember = "cars";
-            this.carsBindingSource.DataSource = this.bdRFIDDataSet;
-            // 
-            // типпроездаDataGridViewTextBoxColumn
-            // 
-            this.типпроездаDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.типпроездаDataGridViewTextBoxColumn.DataPropertyName = "тип_проезда";
-            this.типпроездаDataGridViewTextBoxColumn.DataSource = this.visittypeBindingSource;
-            this.типпроездаDataGridViewTextBoxColumn.DisplayMember = "тип_проезда";
-            this.типпроездаDataGridViewTextBoxColumn.HeaderText = "Тип проезда";
-            this.типпроездаDataGridViewTextBoxColumn.Name = "типпроездаDataGridViewTextBoxColumn";
-            this.типпроездаDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.типпроездаDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.типпроездаDataGridViewTextBoxColumn.ValueMember = "код";
+            this.carswithRFIDBindingSource.DataMember = "cars_with_RFID";
+            this.carswithRFIDBindingSource.DataSource = this.systemRFIDDataSet;
             // 
             // tabPage3
             // 
             this.tabPage3.AutoScroll = true;
-            this.tabPage3.Controls.Add(this.BtnSaveCarWithRFID);
             this.tabPage3.Controls.Add(this.bindingNavigator2);
+            this.tabPage3.Controls.Add(this.BtnSaveCarWithRFID);
             this.tabPage3.Controls.Add(this.dataGridView4);
             this.tabPage3.Controls.Add(this.dataGridView3);
             this.tabPage3.Location = new System.Drawing.Point(4, 31);
@@ -497,21 +456,10 @@
             this.tabPage3.Text = "Машины с RFID";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // BtnSaveCarWithRFID
-            // 
-            this.BtnSaveCarWithRFID.AutoSize = true;
-            this.BtnSaveCarWithRFID.Location = new System.Drawing.Point(8, 319);
-            this.BtnSaveCarWithRFID.Name = "BtnSaveCarWithRFID";
-            this.BtnSaveCarWithRFID.Size = new System.Drawing.Size(169, 32);
-            this.BtnSaveCarWithRFID.TabIndex = 4;
-            this.BtnSaveCarWithRFID.Text = "Сохранить";
-            this.BtnSaveCarWithRFID.UseVisualStyleBackColor = true;
-            this.BtnSaveCarWithRFID.Click += new System.EventHandler(this.BtnSaveCarWithRFID_Click);
-            // 
             // bindingNavigator2
             // 
             this.bindingNavigator2.AddNewItem = this.bindingNavigatorAddNewItem1;
-            this.bindingNavigator2.BindingSource = this.carwithRFIDBindingSource;
+            this.bindingNavigator2.BindingSource = this.carswithRFIDBindingSource;
             this.bindingNavigator2.CountItem = this.bindingNavigatorCountItem1;
             this.bindingNavigator2.DeleteItem = this.bindingNavigatorDeleteItem1;
             this.bindingNavigator2.Dock = System.Windows.Forms.DockStyle.None;
@@ -527,7 +475,7 @@
             this.bindingNavigatorSeparator5,
             this.bindingNavigatorAddNewItem1,
             this.bindingNavigatorDeleteItem1});
-            this.bindingNavigator2.Location = new System.Drawing.Point(8, 291);
+            this.bindingNavigator2.Location = new System.Drawing.Point(8, 290);
             this.bindingNavigator2.MoveFirstItem = this.bindingNavigatorMoveFirstItem1;
             this.bindingNavigator2.MoveLastItem = this.bindingNavigatorMoveLastItem1;
             this.bindingNavigator2.MoveNextItem = this.bindingNavigatorMoveNextItem1;
@@ -535,7 +483,7 @@
             this.bindingNavigator2.Name = "bindingNavigator2";
             this.bindingNavigator2.PositionItem = this.bindingNavigatorPositionItem1;
             this.bindingNavigator2.Size = new System.Drawing.Size(263, 25);
-            this.bindingNavigator2.TabIndex = 2;
+            this.bindingNavigator2.TabIndex = 5;
             this.bindingNavigator2.Text = "bindingNavigator2";
             // 
             // bindingNavigatorAddNewItem1
@@ -546,11 +494,6 @@
             this.bindingNavigatorAddNewItem1.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem1.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem1.Text = "Добавить";
-            // 
-            // carwithRFIDBindingSource
-            // 
-            this.carwithRFIDBindingSource.DataMember = "car_with_RFID";
-            this.carwithRFIDBindingSource.DataSource = this.bdRFIDDataSet;
             // 
             // bindingNavigatorCountItem1
             // 
@@ -628,43 +571,51 @@
             this.bindingNavigatorSeparator5.Name = "bindingNavigatorSeparator5";
             this.bindingNavigatorSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
+            // BtnSaveCarWithRFID
+            // 
+            this.BtnSaveCarWithRFID.AutoSize = true;
+            this.BtnSaveCarWithRFID.Location = new System.Drawing.Point(8, 319);
+            this.BtnSaveCarWithRFID.Name = "BtnSaveCarWithRFID";
+            this.BtnSaveCarWithRFID.Size = new System.Drawing.Size(169, 32);
+            this.BtnSaveCarWithRFID.TabIndex = 4;
+            this.BtnSaveCarWithRFID.Text = "Сохранить";
+            this.BtnSaveCarWithRFID.UseVisualStyleBackColor = true;
+            this.BtnSaveCarWithRFID.Click += new System.EventHandler(this.BtnSaveCarWithRFID_Click);
+            // 
             // dataGridView4
             // 
             this.dataGridView4.AutoGenerateColumns = false;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.кодDataGridViewTextBoxColumn3,
+            this.кодDataGridViewTextBoxColumn8,
             this.доступDataGridViewTextBoxColumn});
             this.dataGridView4.DataSource = this.accessvisitBindingSource;
             this.dataGridView4.Enabled = false;
-            this.dataGridView4.Location = new System.Drawing.Point(681, 291);
+            this.dataGridView4.Location = new System.Drawing.Point(687, 290);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.Size = new System.Drawing.Size(311, 118);
             this.dataGridView4.TabIndex = 1;
             // 
-            // кодDataGridViewTextBoxColumn3
+            // кодDataGridViewTextBoxColumn8
             // 
-            this.кодDataGridViewTextBoxColumn3.DataPropertyName = "код";
-            this.кодDataGridViewTextBoxColumn3.FillWeight = 1F;
-            this.кодDataGridViewTextBoxColumn3.HeaderText = "код";
-            this.кодDataGridViewTextBoxColumn3.MinimumWidth = 2;
-            this.кодDataGridViewTextBoxColumn3.Name = "кодDataGridViewTextBoxColumn3";
-            this.кодDataGridViewTextBoxColumn3.ReadOnly = true;
-            this.кодDataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.кодDataGridViewTextBoxColumn3.Visible = false;
-            this.кодDataGridViewTextBoxColumn3.Width = 2;
+            this.кодDataGridViewTextBoxColumn8.DataPropertyName = "код";
+            this.кодDataGridViewTextBoxColumn8.HeaderText = "код";
+            this.кодDataGridViewTextBoxColumn8.MinimumWidth = 2;
+            this.кодDataGridViewTextBoxColumn8.Name = "кодDataGridViewTextBoxColumn8";
+            this.кодDataGridViewTextBoxColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.кодDataGridViewTextBoxColumn8.Width = 2;
             // 
             // доступDataGridViewTextBoxColumn
             // 
             this.доступDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.доступDataGridViewTextBoxColumn.DataPropertyName = "Доступ";
+            this.доступDataGridViewTextBoxColumn.DataPropertyName = "доступ";
             this.доступDataGridViewTextBoxColumn.HeaderText = "Доступ";
             this.доступDataGridViewTextBoxColumn.Name = "доступDataGridViewTextBoxColumn";
             // 
             // accessvisitBindingSource
             // 
             this.accessvisitBindingSource.DataMember = "access_visit";
-            this.accessvisitBindingSource.DataSource = this.bdRFIDDataSet;
+            this.accessvisitBindingSource.DataSource = this.systemRFIDDataSet;
             // 
             // dataGridView3
             // 
@@ -676,44 +627,39 @@
             this.epcDataGridViewTextBoxColumn,
             this.машиныDataGridViewTextBoxColumn,
             this.водительDataGridViewTextBoxColumn,
-            this.доступвъездаDataGridViewTextBoxColumn});
-            this.dataGridView3.DataSource = this.carwithRFIDBindingSource;
-            this.dataGridView3.Location = new System.Drawing.Point(8, 3);
+            this.доступпроездаDataGridViewTextBoxColumn});
+            this.dataGridView3.DataSource = this.carswithRFIDBindingSource;
+            this.dataGridView3.Location = new System.Drawing.Point(3, 3);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView3.Size = new System.Drawing.Size(984, 279);
+            this.dataGridView3.Size = new System.Drawing.Size(995, 279);
             this.dataGridView3.TabIndex = 0;
             // 
             // кодDataGridViewTextBoxColumn2
             // 
             this.кодDataGridViewTextBoxColumn2.DataPropertyName = "код";
-            this.кодDataGridViewTextBoxColumn2.FillWeight = 1F;
             this.кодDataGridViewTextBoxColumn2.HeaderText = "код";
             this.кодDataGridViewTextBoxColumn2.MinimumWidth = 2;
             this.кодDataGridViewTextBoxColumn2.Name = "кодDataGridViewTextBoxColumn2";
-            this.кодDataGridViewTextBoxColumn2.ReadOnly = true;
             this.кодDataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.кодDataGridViewTextBoxColumn2.Visible = false;
             this.кодDataGridViewTextBoxColumn2.Width = 2;
             // 
             // датазаписиDataGridViewTextBoxColumn
             // 
             this.датазаписиDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.датазаписиDataGridViewTextBoxColumn.DataPropertyName = "Дата_записи";
+            this.датазаписиDataGridViewTextBoxColumn.DataPropertyName = "дата_записи";
             dataGridViewCellStyle2.Format = "D";
             dataGridViewCellStyle2.NullValue = null;
             this.датазаписиDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.датазаписиDataGridViewTextBoxColumn.HeaderText = "Дата_записи";
+            this.датазаписиDataGridViewTextBoxColumn.HeaderText = "Дата записи";
             this.датазаписиDataGridViewTextBoxColumn.Name = "датазаписиDataGridViewTextBoxColumn";
             // 
             // epcDataGridViewTextBoxColumn
             // 
             this.epcDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.epcDataGridViewTextBoxColumn.DataPropertyName = "Epc";
+            this.epcDataGridViewTextBoxColumn.DataPropertyName = "epc";
             this.epcDataGridViewTextBoxColumn.DataSource = this.rFIDmetkaBindingSource;
-            dataGridViewCellStyle3.Format = "N0";
-            this.epcDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.epcDataGridViewTextBoxColumn.DisplayMember = "Epc";
+            this.epcDataGridViewTextBoxColumn.DisplayMember = "epc";
             this.epcDataGridViewTextBoxColumn.HeaderText = "EPC";
             this.epcDataGridViewTextBoxColumn.Name = "epcDataGridViewTextBoxColumn";
             this.epcDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -723,7 +669,7 @@
             // rFIDmetkaBindingSource
             // 
             this.rFIDmetkaBindingSource.DataMember = "RFID_metka";
-            this.rFIDmetkaBindingSource.DataSource = this.bdRFIDDataSet;
+            this.rFIDmetkaBindingSource.DataSource = this.systemRFIDDataSet;
             // 
             // машиныDataGridViewTextBoxColumn
             // 
@@ -737,12 +683,17 @@
             this.машиныDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.машиныDataGridViewTextBoxColumn.ValueMember = "код";
             // 
+            // carsBindingSource
+            // 
+            this.carsBindingSource.DataMember = "cars";
+            this.carsBindingSource.DataSource = this.systemRFIDDataSet;
+            // 
             // водительDataGridViewTextBoxColumn
             // 
             this.водительDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.водительDataGridViewTextBoxColumn.DataPropertyName = "Водитель";
+            this.водительDataGridViewTextBoxColumn.DataPropertyName = "водитель";
             this.водительDataGridViewTextBoxColumn.DataSource = this.chauffeurBindingSource;
-            this.водительDataGridViewTextBoxColumn.DisplayMember = "Фамилия";
+            this.водительDataGridViewTextBoxColumn.DisplayMember = "фамилия";
             this.водительDataGridViewTextBoxColumn.HeaderText = "Водитель";
             this.водительDataGridViewTextBoxColumn.Name = "водительDataGridViewTextBoxColumn";
             this.водительDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -752,24 +703,24 @@
             // chauffeurBindingSource
             // 
             this.chauffeurBindingSource.DataMember = "chauffeur";
-            this.chauffeurBindingSource.DataSource = this.bdRFIDDataSet;
+            this.chauffeurBindingSource.DataSource = this.systemRFIDDataSet;
             // 
-            // доступвъездаDataGridViewTextBoxColumn
+            // доступпроездаDataGridViewTextBoxColumn
             // 
-            this.доступвъездаDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.доступвъездаDataGridViewTextBoxColumn.DataPropertyName = "Доступ_въезда";
-            this.доступвъездаDataGridViewTextBoxColumn.DataSource = this.accessvisitBindingSource;
-            this.доступвъездаDataGridViewTextBoxColumn.DisplayMember = "Доступ";
-            this.доступвъездаDataGridViewTextBoxColumn.HeaderText = "Доступ въезда";
-            this.доступвъездаDataGridViewTextBoxColumn.Name = "доступвъездаDataGridViewTextBoxColumn";
-            this.доступвъездаDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.доступвъездаDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.доступвъездаDataGridViewTextBoxColumn.ValueMember = "код";
+            this.доступпроездаDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.доступпроездаDataGridViewTextBoxColumn.DataPropertyName = "доступ_проезда";
+            this.доступпроездаDataGridViewTextBoxColumn.DataSource = this.accessvisitBindingSource;
+            this.доступпроездаDataGridViewTextBoxColumn.DisplayMember = "доступ";
+            this.доступпроездаDataGridViewTextBoxColumn.HeaderText = "Доступ проезда";
+            this.доступпроездаDataGridViewTextBoxColumn.Name = "доступпроездаDataGridViewTextBoxColumn";
+            this.доступпроездаDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.доступпроездаDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.доступпроездаDataGridViewTextBoxColumn.ValueMember = "код";
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.BtnSaveChauffeur);
             this.tabPage5.Controls.Add(this.bindingNavigator3);
+            this.tabPage5.Controls.Add(this.BtnSaveChauffeur);
             this.tabPage5.Controls.Add(this.dataGridView5);
             this.tabPage5.Location = new System.Drawing.Point(4, 31);
             this.tabPage5.Name = "tabPage5";
@@ -777,17 +728,6 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Водители";
             this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // BtnSaveChauffeur
-            // 
-            this.BtnSaveChauffeur.AutoSize = true;
-            this.BtnSaveChauffeur.Location = new System.Drawing.Point(8, 278);
-            this.BtnSaveChauffeur.Name = "BtnSaveChauffeur";
-            this.BtnSaveChauffeur.Size = new System.Drawing.Size(169, 32);
-            this.BtnSaveChauffeur.TabIndex = 5;
-            this.BtnSaveChauffeur.Text = "Сохранить";
-            this.BtnSaveChauffeur.UseVisualStyleBackColor = true;
-            this.BtnSaveChauffeur.Click += new System.EventHandler(this.BtnSaveChauffeur_Click);
             // 
             // bindingNavigator3
             // 
@@ -816,7 +756,7 @@
             this.bindingNavigator3.Name = "bindingNavigator3";
             this.bindingNavigator3.PositionItem = this.bindingNavigatorPositionItem2;
             this.bindingNavigator3.Size = new System.Drawing.Size(263, 25);
-            this.bindingNavigator3.TabIndex = 1;
+            this.bindingNavigator3.TabIndex = 6;
             this.bindingNavigator3.Text = "bindingNavigator3";
             // 
             // bindingNavigatorAddNewItem2
@@ -904,52 +844,60 @@
             this.bindingNavigatorSeparator8.Name = "bindingNavigatorSeparator8";
             this.bindingNavigatorSeparator8.Size = new System.Drawing.Size(6, 25);
             // 
+            // BtnSaveChauffeur
+            // 
+            this.BtnSaveChauffeur.AutoSize = true;
+            this.BtnSaveChauffeur.Location = new System.Drawing.Point(8, 278);
+            this.BtnSaveChauffeur.Name = "BtnSaveChauffeur";
+            this.BtnSaveChauffeur.Size = new System.Drawing.Size(169, 32);
+            this.BtnSaveChauffeur.TabIndex = 5;
+            this.BtnSaveChauffeur.Text = "Сохранить";
+            this.BtnSaveChauffeur.UseVisualStyleBackColor = true;
+            this.BtnSaveChauffeur.Click += new System.EventHandler(this.BtnSaveChauffeur_Click);
+            // 
             // dataGridView5
             // 
             this.dataGridView5.AutoGenerateColumns = false;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.кодDataGridViewTextBoxColumn4,
+            this.кодDataGridViewTextBoxColumn3,
             this.фамилияDataGridViewTextBoxColumn,
             this.имяDataGridViewTextBoxColumn,
             this.отчествоDataGridViewTextBoxColumn,
             this.водительскихправDataGridViewTextBoxColumn});
             this.dataGridView5.DataSource = this.chauffeurBindingSource;
-            this.dataGridView5.Location = new System.Drawing.Point(8, 3);
+            this.dataGridView5.Location = new System.Drawing.Point(3, 3);
             this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.Size = new System.Drawing.Size(984, 244);
+            this.dataGridView5.Size = new System.Drawing.Size(995, 244);
             this.dataGridView5.TabIndex = 0;
             // 
-            // кодDataGridViewTextBoxColumn4
+            // кодDataGridViewTextBoxColumn3
             // 
-            this.кодDataGridViewTextBoxColumn4.DataPropertyName = "код";
-            this.кодDataGridViewTextBoxColumn4.FillWeight = 1F;
-            this.кодDataGridViewTextBoxColumn4.HeaderText = "код";
-            this.кодDataGridViewTextBoxColumn4.MinimumWidth = 2;
-            this.кодDataGridViewTextBoxColumn4.Name = "кодDataGridViewTextBoxColumn4";
-            this.кодDataGridViewTextBoxColumn4.ReadOnly = true;
-            this.кодDataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.кодDataGridViewTextBoxColumn4.Visible = false;
-            this.кодDataGridViewTextBoxColumn4.Width = 2;
+            this.кодDataGridViewTextBoxColumn3.DataPropertyName = "код";
+            this.кодDataGridViewTextBoxColumn3.HeaderText = "код";
+            this.кодDataGridViewTextBoxColumn3.MinimumWidth = 2;
+            this.кодDataGridViewTextBoxColumn3.Name = "кодDataGridViewTextBoxColumn3";
+            this.кодDataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.кодDataGridViewTextBoxColumn3.Width = 2;
             // 
             // фамилияDataGridViewTextBoxColumn
             // 
             this.фамилияDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.фамилияDataGridViewTextBoxColumn.DataPropertyName = "Фамилия";
+            this.фамилияDataGridViewTextBoxColumn.DataPropertyName = "фамилия";
             this.фамилияDataGridViewTextBoxColumn.HeaderText = "Фамилия";
             this.фамилияDataGridViewTextBoxColumn.Name = "фамилияDataGridViewTextBoxColumn";
             // 
             // имяDataGridViewTextBoxColumn
             // 
             this.имяDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.имяDataGridViewTextBoxColumn.DataPropertyName = "Имя";
+            this.имяDataGridViewTextBoxColumn.DataPropertyName = "имя";
             this.имяDataGridViewTextBoxColumn.HeaderText = "Имя";
             this.имяDataGridViewTextBoxColumn.Name = "имяDataGridViewTextBoxColumn";
             // 
             // отчествоDataGridViewTextBoxColumn
             // 
             this.отчествоDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.отчествоDataGridViewTextBoxColumn.DataPropertyName = "Отчество";
+            this.отчествоDataGridViewTextBoxColumn.DataPropertyName = "отчество";
             this.отчествоDataGridViewTextBoxColumn.HeaderText = "Отчество";
             this.отчествоDataGridViewTextBoxColumn.Name = "отчествоDataGridViewTextBoxColumn";
             // 
@@ -957,15 +905,18 @@
             // 
             this.водительскихправDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.водительскихправDataGridViewTextBoxColumn.DataPropertyName = "№_водительских_прав";
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = null;
+            this.водительскихправDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.водительскихправDataGridViewTextBoxColumn.HeaderText = "№ водительских прав";
             this.водительскихправDataGridViewTextBoxColumn.Name = "водительскихправDataGridViewTextBoxColumn";
             // 
             // tabPage6
             // 
-            this.tabPage6.Controls.Add(this.BtnSaveTypeCar);
-            this.tabPage6.Controls.Add(this.BtnSaveCars);
             this.tabPage6.Controls.Add(this.bindingNavigator5);
             this.tabPage6.Controls.Add(this.bindingNavigator4);
+            this.tabPage6.Controls.Add(this.BtnSaveTypeCar);
+            this.tabPage6.Controls.Add(this.BtnSaveCars);
             this.tabPage6.Controls.Add(this.dataGridView7);
             this.tabPage6.Controls.Add(this.dataGridView6);
             this.tabPage6.Location = new System.Drawing.Point(4, 31);
@@ -974,28 +925,6 @@
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Машины в базе";
             this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // BtnSaveTypeCar
-            // 
-            this.BtnSaveTypeCar.AutoSize = true;
-            this.BtnSaveTypeCar.Location = new System.Drawing.Point(632, 277);
-            this.BtnSaveTypeCar.Name = "BtnSaveTypeCar";
-            this.BtnSaveTypeCar.Size = new System.Drawing.Size(169, 32);
-            this.BtnSaveTypeCar.TabIndex = 6;
-            this.BtnSaveTypeCar.Text = "Сохранить";
-            this.BtnSaveTypeCar.UseVisualStyleBackColor = true;
-            this.BtnSaveTypeCar.Click += new System.EventHandler(this.BtnSaveTypeCar_Click);
-            // 
-            // BtnSaveCars
-            // 
-            this.BtnSaveCars.AutoSize = true;
-            this.BtnSaveCars.Location = new System.Drawing.Point(8, 277);
-            this.BtnSaveCars.Name = "BtnSaveCars";
-            this.BtnSaveCars.Size = new System.Drawing.Size(169, 32);
-            this.BtnSaveCars.TabIndex = 5;
-            this.BtnSaveCars.Text = "Сохранить";
-            this.BtnSaveCars.UseVisualStyleBackColor = true;
-            this.BtnSaveCars.Click += new System.EventHandler(this.BtnSaveCars_Click);
             // 
             // bindingNavigator5
             // 
@@ -1024,7 +953,7 @@
             this.bindingNavigator5.Name = "bindingNavigator5";
             this.bindingNavigator5.PositionItem = this.bindingNavigatorPositionItem4;
             this.bindingNavigator5.Size = new System.Drawing.Size(263, 25);
-            this.bindingNavigator5.TabIndex = 3;
+            this.bindingNavigator5.TabIndex = 8;
             this.bindingNavigator5.Text = "bindingNavigator5";
             // 
             // bindingNavigatorAddNewItem4
@@ -1039,7 +968,7 @@
             // typecarBindingSource
             // 
             this.typecarBindingSource.DataMember = "type_car";
-            this.typecarBindingSource.DataSource = this.bdRFIDDataSet;
+            this.typecarBindingSource.DataSource = this.systemRFIDDataSet;
             // 
             // bindingNavigatorCountItem4
             // 
@@ -1144,7 +1073,7 @@
             this.bindingNavigator4.Name = "bindingNavigator4";
             this.bindingNavigator4.PositionItem = this.bindingNavigatorPositionItem3;
             this.bindingNavigator4.Size = new System.Drawing.Size(263, 25);
-            this.bindingNavigator4.TabIndex = 2;
+            this.bindingNavigator4.TabIndex = 7;
             this.bindingNavigator4.Text = "bindingNavigator4";
             // 
             // bindingNavigatorAddNewItem3
@@ -1232,63 +1161,79 @@
             this.bindingNavigatorSeparator11.Name = "bindingNavigatorSeparator11";
             this.bindingNavigatorSeparator11.Size = new System.Drawing.Size(6, 25);
             // 
+            // BtnSaveTypeCar
+            // 
+            this.BtnSaveTypeCar.AutoSize = true;
+            this.BtnSaveTypeCar.Location = new System.Drawing.Point(632, 277);
+            this.BtnSaveTypeCar.Name = "BtnSaveTypeCar";
+            this.BtnSaveTypeCar.Size = new System.Drawing.Size(169, 32);
+            this.BtnSaveTypeCar.TabIndex = 6;
+            this.BtnSaveTypeCar.Text = "Сохранить";
+            this.BtnSaveTypeCar.UseVisualStyleBackColor = true;
+            this.BtnSaveTypeCar.Click += new System.EventHandler(this.BtnSaveTypeCar_Click);
+            // 
+            // BtnSaveCars
+            // 
+            this.BtnSaveCars.AutoSize = true;
+            this.BtnSaveCars.Location = new System.Drawing.Point(8, 277);
+            this.BtnSaveCars.Name = "BtnSaveCars";
+            this.BtnSaveCars.Size = new System.Drawing.Size(169, 32);
+            this.BtnSaveCars.TabIndex = 5;
+            this.BtnSaveCars.Text = "Сохранить";
+            this.BtnSaveCars.UseVisualStyleBackColor = true;
+            this.BtnSaveCars.Click += new System.EventHandler(this.BtnSaveCars_Click);
+            // 
             // dataGridView7
             // 
             this.dataGridView7.AutoGenerateColumns = false;
             this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView7.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.кодDataGridViewTextBoxColumn6,
-            this.типмашиныDataGridViewTextBoxColumn1});
+            this.кодDataGridViewTextBoxColumn5,
+            this.типDataGridViewTextBoxColumn1});
             this.dataGridView7.DataSource = this.typecarBindingSource;
             this.dataGridView7.Location = new System.Drawing.Point(632, 3);
             this.dataGridView7.Name = "dataGridView7";
-            this.dataGridView7.Size = new System.Drawing.Size(360, 243);
+            this.dataGridView7.Size = new System.Drawing.Size(366, 243);
             this.dataGridView7.TabIndex = 1;
             // 
-            // кодDataGridViewTextBoxColumn6
+            // кодDataGridViewTextBoxColumn5
             // 
-            this.кодDataGridViewTextBoxColumn6.DataPropertyName = "код";
-            this.кодDataGridViewTextBoxColumn6.FillWeight = 1F;
-            this.кодDataGridViewTextBoxColumn6.HeaderText = "код";
-            this.кодDataGridViewTextBoxColumn6.MinimumWidth = 2;
-            this.кодDataGridViewTextBoxColumn6.Name = "кодDataGridViewTextBoxColumn6";
-            this.кодDataGridViewTextBoxColumn6.ReadOnly = true;
-            this.кодDataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.кодDataGridViewTextBoxColumn6.Visible = false;
-            this.кодDataGridViewTextBoxColumn6.Width = 2;
+            this.кодDataGridViewTextBoxColumn5.DataPropertyName = "код";
+            this.кодDataGridViewTextBoxColumn5.HeaderText = "код";
+            this.кодDataGridViewTextBoxColumn5.MinimumWidth = 2;
+            this.кодDataGridViewTextBoxColumn5.Name = "кодDataGridViewTextBoxColumn5";
+            this.кодDataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.кодDataGridViewTextBoxColumn5.Width = 2;
             // 
-            // типмашиныDataGridViewTextBoxColumn1
+            // типDataGridViewTextBoxColumn1
             // 
-            this.типмашиныDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.типмашиныDataGridViewTextBoxColumn1.DataPropertyName = "тип_машины";
-            this.типмашиныDataGridViewTextBoxColumn1.HeaderText = "Тип машины";
-            this.типмашиныDataGridViewTextBoxColumn1.Name = "типмашиныDataGridViewTextBoxColumn1";
+            this.типDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.типDataGridViewTextBoxColumn1.DataPropertyName = "тип";
+            this.типDataGridViewTextBoxColumn1.HeaderText = "Тип";
+            this.типDataGridViewTextBoxColumn1.Name = "типDataGridViewTextBoxColumn1";
             // 
             // dataGridView6
             // 
             this.dataGridView6.AutoGenerateColumns = false;
             this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView6.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.кодDataGridViewTextBoxColumn5,
+            this.кодDataGridViewTextBoxColumn4,
             this.машиныDataGridViewTextBoxColumn1,
             this.типмашиныDataGridViewTextBoxColumn});
             this.dataGridView6.DataSource = this.carsBindingSource;
-            this.dataGridView6.Location = new System.Drawing.Point(8, 3);
+            this.dataGridView6.Location = new System.Drawing.Point(3, 3);
             this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.Size = new System.Drawing.Size(618, 243);
+            this.dataGridView6.Size = new System.Drawing.Size(623, 243);
             this.dataGridView6.TabIndex = 0;
             // 
-            // кодDataGridViewTextBoxColumn5
+            // кодDataGridViewTextBoxColumn4
             // 
-            this.кодDataGridViewTextBoxColumn5.DataPropertyName = "код";
-            this.кодDataGridViewTextBoxColumn5.FillWeight = 1F;
-            this.кодDataGridViewTextBoxColumn5.HeaderText = "код";
-            this.кодDataGridViewTextBoxColumn5.MinimumWidth = 2;
-            this.кодDataGridViewTextBoxColumn5.Name = "кодDataGridViewTextBoxColumn5";
-            this.кодDataGridViewTextBoxColumn5.ReadOnly = true;
-            this.кодDataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.кодDataGridViewTextBoxColumn5.Visible = false;
-            this.кодDataGridViewTextBoxColumn5.Width = 2;
+            this.кодDataGridViewTextBoxColumn4.DataPropertyName = "код";
+            this.кодDataGridViewTextBoxColumn4.HeaderText = "код";
+            this.кодDataGridViewTextBoxColumn4.MinimumWidth = 2;
+            this.кодDataGridViewTextBoxColumn4.Name = "кодDataGridViewTextBoxColumn4";
+            this.кодDataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.кодDataGridViewTextBoxColumn4.Width = 2;
             // 
             // машиныDataGridViewTextBoxColumn1
             // 
@@ -1300,9 +1245,9 @@
             // типмашиныDataGridViewTextBoxColumn
             // 
             this.типмашиныDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.типмашиныDataGridViewTextBoxColumn.DataPropertyName = "Тип_машины";
+            this.типмашиныDataGridViewTextBoxColumn.DataPropertyName = "тип_машины";
             this.типмашиныDataGridViewTextBoxColumn.DataSource = this.typecarBindingSource;
-            this.типмашиныDataGridViewTextBoxColumn.DisplayMember = "тип_машины";
+            this.типмашиныDataGridViewTextBoxColumn.DisplayMember = "тип";
             this.типмашиныDataGridViewTextBoxColumn.HeaderText = "Тип машины";
             this.типмашиныDataGridViewTextBoxColumn.Name = "типмашиныDataGridViewTextBoxColumn";
             this.типмашиныDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -1312,8 +1257,8 @@
             // tabPage7
             // 
             this.tabPage7.AutoScroll = true;
-            this.tabPage7.Controls.Add(this.BtnSaveRFIDMetka);
             this.tabPage7.Controls.Add(this.bindingNavigator6);
+            this.tabPage7.Controls.Add(this.BtnSaveRFIDMetka);
             this.tabPage7.Controls.Add(this.dataGridView9);
             this.tabPage7.Controls.Add(this.dataGridView8);
             this.tabPage7.Location = new System.Drawing.Point(4, 31);
@@ -1322,17 +1267,6 @@
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "RFID-метка";
             this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // BtnSaveRFIDMetka
-            // 
-            this.BtnSaveRFIDMetka.AutoSize = true;
-            this.BtnSaveRFIDMetka.Location = new System.Drawing.Point(8, 299);
-            this.BtnSaveRFIDMetka.Name = "BtnSaveRFIDMetka";
-            this.BtnSaveRFIDMetka.Size = new System.Drawing.Size(169, 32);
-            this.BtnSaveRFIDMetka.TabIndex = 6;
-            this.BtnSaveRFIDMetka.Text = "Сохранить";
-            this.BtnSaveRFIDMetka.UseVisualStyleBackColor = true;
-            this.BtnSaveRFIDMetka.Click += new System.EventHandler(this.BtnSaveRFIDMetka_Click);
             // 
             // bindingNavigator6
             // 
@@ -1361,7 +1295,7 @@
             this.bindingNavigator6.Name = "bindingNavigator6";
             this.bindingNavigator6.PositionItem = this.bindingNavigatorPositionItem5;
             this.bindingNavigator6.Size = new System.Drawing.Size(263, 25);
-            this.bindingNavigator6.TabIndex = 2;
+            this.bindingNavigator6.TabIndex = 7;
             this.bindingNavigator6.Text = "bindingNavigator6";
             // 
             // bindingNavigatorAddNewItem5
@@ -1449,6 +1383,17 @@
             this.bindingNavigatorSeparator17.Name = "bindingNavigatorSeparator17";
             this.bindingNavigatorSeparator17.Size = new System.Drawing.Size(6, 25);
             // 
+            // BtnSaveRFIDMetka
+            // 
+            this.BtnSaveRFIDMetka.AutoSize = true;
+            this.BtnSaveRFIDMetka.Location = new System.Drawing.Point(8, 299);
+            this.BtnSaveRFIDMetka.Name = "BtnSaveRFIDMetka";
+            this.BtnSaveRFIDMetka.Size = new System.Drawing.Size(169, 32);
+            this.BtnSaveRFIDMetka.TabIndex = 6;
+            this.BtnSaveRFIDMetka.Text = "Сохранить";
+            this.BtnSaveRFIDMetka.UseVisualStyleBackColor = true;
+            this.BtnSaveRFIDMetka.Click += new System.EventHandler(this.BtnSaveRFIDMetka_Click);
+            // 
             // dataGridView9
             // 
             this.dataGridView9.AutoGenerateColumns = false;
@@ -1458,7 +1403,7 @@
             this.статусDataGridViewTextBoxColumn});
             this.dataGridView9.DataSource = this.statusactiveBindingSource;
             this.dataGridView9.Enabled = false;
-            this.dataGridView9.Location = new System.Drawing.Point(668, 271);
+            this.dataGridView9.Location = new System.Drawing.Point(674, 271);
             this.dataGridView9.Name = "dataGridView9";
             this.dataGridView9.Size = new System.Drawing.Size(324, 138);
             this.dataGridView9.TabIndex = 1;
@@ -1466,77 +1411,73 @@
             // кодDataGridViewTextBoxColumn7
             // 
             this.кодDataGridViewTextBoxColumn7.DataPropertyName = "код";
-            this.кодDataGridViewTextBoxColumn7.FillWeight = 1F;
             this.кодDataGridViewTextBoxColumn7.HeaderText = "код";
             this.кодDataGridViewTextBoxColumn7.MinimumWidth = 2;
             this.кодDataGridViewTextBoxColumn7.Name = "кодDataGridViewTextBoxColumn7";
-            this.кодDataGridViewTextBoxColumn7.ReadOnly = true;
             this.кодDataGridViewTextBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.кодDataGridViewTextBoxColumn7.Visible = false;
             this.кодDataGridViewTextBoxColumn7.Width = 2;
             // 
             // статусDataGridViewTextBoxColumn
             // 
             this.статусDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.статусDataGridViewTextBoxColumn.DataPropertyName = "Статус";
+            this.статусDataGridViewTextBoxColumn.DataPropertyName = "статус";
             this.статусDataGridViewTextBoxColumn.HeaderText = "Статус";
             this.статусDataGridViewTextBoxColumn.Name = "статусDataGridViewTextBoxColumn";
             // 
             // statusactiveBindingSource
             // 
             this.statusactiveBindingSource.DataMember = "status_active";
-            this.statusactiveBindingSource.DataSource = this.bdRFIDDataSet;
+            this.statusactiveBindingSource.DataSource = this.systemRFIDDataSet;
             // 
             // dataGridView8
             // 
             this.dataGridView8.AutoGenerateColumns = false;
             this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView8.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.кодDataGridViewTextBoxColumn8,
+            this.кодDataGridViewTextBoxColumn6,
             this.epcDataGridViewTextBoxColumn1,
             this.датарегистрацииDataGridViewTextBoxColumn,
             this.статусактивностиDataGridViewTextBoxColumn});
             this.dataGridView8.DataSource = this.rFIDmetkaBindingSource;
-            this.dataGridView8.Location = new System.Drawing.Point(8, 3);
+            this.dataGridView8.Location = new System.Drawing.Point(3, 3);
             this.dataGridView8.Name = "dataGridView8";
-            this.dataGridView8.Size = new System.Drawing.Size(984, 262);
+            this.dataGridView8.Size = new System.Drawing.Size(995, 262);
             this.dataGridView8.TabIndex = 0;
             // 
-            // кодDataGridViewTextBoxColumn8
+            // кодDataGridViewTextBoxColumn6
             // 
-            this.кодDataGridViewTextBoxColumn8.DataPropertyName = "код";
-            this.кодDataGridViewTextBoxColumn8.FillWeight = 1F;
-            this.кодDataGridViewTextBoxColumn8.HeaderText = "код";
-            this.кодDataGridViewTextBoxColumn8.MinimumWidth = 2;
-            this.кодDataGridViewTextBoxColumn8.Name = "кодDataGridViewTextBoxColumn8";
-            this.кодDataGridViewTextBoxColumn8.ReadOnly = true;
-            this.кодDataGridViewTextBoxColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.кодDataGridViewTextBoxColumn8.Visible = false;
-            this.кодDataGridViewTextBoxColumn8.Width = 2;
+            this.кодDataGridViewTextBoxColumn6.DataPropertyName = "код";
+            this.кодDataGridViewTextBoxColumn6.HeaderText = "код";
+            this.кодDataGridViewTextBoxColumn6.MinimumWidth = 2;
+            this.кодDataGridViewTextBoxColumn6.Name = "кодDataGridViewTextBoxColumn6";
+            this.кодDataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.кодDataGridViewTextBoxColumn6.Width = 2;
             // 
             // epcDataGridViewTextBoxColumn1
             // 
             this.epcDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.epcDataGridViewTextBoxColumn1.DataPropertyName = "Epc";
+            this.epcDataGridViewTextBoxColumn1.DataPropertyName = "epc";
+            dataGridViewCellStyle4.NullValue = null;
+            this.epcDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle4;
             this.epcDataGridViewTextBoxColumn1.HeaderText = "EPC";
             this.epcDataGridViewTextBoxColumn1.Name = "epcDataGridViewTextBoxColumn1";
             // 
             // датарегистрацииDataGridViewTextBoxColumn
             // 
             this.датарегистрацииDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.датарегистрацииDataGridViewTextBoxColumn.DataPropertyName = "Дата_регистрации";
-            dataGridViewCellStyle4.Format = "D";
-            dataGridViewCellStyle4.NullValue = null;
-            this.датарегистрацииDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.датарегистрацииDataGridViewTextBoxColumn.DataPropertyName = "дата_регистрации";
+            dataGridViewCellStyle5.Format = "D";
+            dataGridViewCellStyle5.NullValue = null;
+            this.датарегистрацииDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.датарегистрацииDataGridViewTextBoxColumn.HeaderText = "Дата регистрации";
             this.датарегистрацииDataGridViewTextBoxColumn.Name = "датарегистрацииDataGridViewTextBoxColumn";
             // 
             // статусактивностиDataGridViewTextBoxColumn
             // 
             this.статусактивностиDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.статусактивностиDataGridViewTextBoxColumn.DataPropertyName = "Статус_активности";
+            this.статусактивностиDataGridViewTextBoxColumn.DataPropertyName = "статус_активности";
             this.статусактивностиDataGridViewTextBoxColumn.DataSource = this.statusactiveBindingSource;
-            this.статусактивностиDataGridViewTextBoxColumn.DisplayMember = "Статус";
+            this.статусактивностиDataGridViewTextBoxColumn.DisplayMember = "статус";
             this.статусактивностиDataGridViewTextBoxColumn.HeaderText = "Статус активности";
             this.статусактивностиDataGridViewTextBoxColumn.Name = "статусактивностиDataGridViewTextBoxColumn";
             this.статусактивностиDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -1549,6 +1490,7 @@
             this.закрытьToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.menuStrip1.Size = new System.Drawing.Size(1009, 30);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
@@ -1565,17 +1507,13 @@
             // 
             this.history_visitTableAdapter.ClearBeforeFill = true;
             // 
-            // visit_typeTableAdapter
+            // type_visitTableAdapter
             // 
-            this.visit_typeTableAdapter.ClearBeforeFill = true;
+            this.type_visitTableAdapter.ClearBeforeFill = true;
             // 
-            // car_with_RFIDTableAdapter
+            // cars_with_RFIDTableAdapter
             // 
-            this.car_with_RFIDTableAdapter.ClearBeforeFill = true;
-            // 
-            // access_visitTableAdapter
-            // 
-            this.access_visitTableAdapter.ClearBeforeFill = true;
+            this.cars_with_RFIDTableAdapter.ClearBeforeFill = true;
             // 
             // chauffeurTableAdapter
             // 
@@ -1589,13 +1527,60 @@
             // 
             this.type_carTableAdapter.ClearBeforeFill = true;
             // 
+            // rFID_metkaTableAdapter
+            // 
+            this.rFID_metkaTableAdapter.ClearBeforeFill = true;
+            // 
             // status_activeTableAdapter
             // 
             this.status_activeTableAdapter.ClearBeforeFill = true;
             // 
-            // rFID_metkaTableAdapter
+            // access_visitTableAdapter
             // 
-            this.rFID_metkaTableAdapter.ClearBeforeFill = true;
+            this.access_visitTableAdapter.ClearBeforeFill = true;
+            // 
+            // кодDataGridViewTextBoxColumn
+            // 
+            this.кодDataGridViewTextBoxColumn.DataPropertyName = "код";
+            this.кодDataGridViewTextBoxColumn.HeaderText = "код";
+            this.кодDataGridViewTextBoxColumn.MinimumWidth = 2;
+            this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
+            this.кодDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.кодDataGridViewTextBoxColumn.Width = 2;
+            // 
+            // датапроездаDataGridViewTextBoxColumn
+            // 
+            this.датапроездаDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.датапроездаDataGridViewTextBoxColumn.DataPropertyName = "дата_проезда";
+            dataGridViewCellStyle1.Format = "D";
+            dataGridViewCellStyle1.NullValue = null;
+            this.датапроездаDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.датапроездаDataGridViewTextBoxColumn.HeaderText = "Дата проезда";
+            this.датапроездаDataGridViewTextBoxColumn.Name = "датапроездаDataGridViewTextBoxColumn";
+            // 
+            // машинаDataGridViewTextBoxColumn
+            // 
+            this.машинаDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.машинаDataGridViewTextBoxColumn.DataPropertyName = "машина";
+            this.машинаDataGridViewTextBoxColumn.DataSource = this.carsBindingSource;
+            this.машинаDataGridViewTextBoxColumn.DisplayMember = "№_машины";
+            this.машинаDataGridViewTextBoxColumn.HeaderText = "Машина";
+            this.машинаDataGridViewTextBoxColumn.Name = "машинаDataGridViewTextBoxColumn";
+            this.машинаDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.машинаDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.машинаDataGridViewTextBoxColumn.ValueMember = "код";
+            // 
+            // типпроездаDataGridViewTextBoxColumn
+            // 
+            this.типпроездаDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.типпроездаDataGridViewTextBoxColumn.DataPropertyName = "тип_проезда";
+            this.типпроездаDataGridViewTextBoxColumn.DataSource = this.typevisitBindingSource;
+            this.типпроездаDataGridViewTextBoxColumn.DisplayMember = "тип";
+            this.типпроездаDataGridViewTextBoxColumn.HeaderText = "Тип проезда";
+            this.типпроездаDataGridViewTextBoxColumn.Name = "типпроездаDataGridViewTextBoxColumn";
+            this.типпроездаDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.типпроездаDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.типпроездаDataGridViewTextBoxColumn.ValueMember = "код";
             // 
             // Tables
             // 
@@ -1610,7 +1595,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Tables";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tables";
+            this.Text = "База данных";
             this.Load += new System.EventHandler(this.Tables_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -1619,21 +1604,21 @@
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.historyvisitBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdRFIDDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemRFIDDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTypeVisit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.visittypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typevisitBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistoryVisit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carswithRFIDBindingSource)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).EndInit();
             this.bindingNavigator2.ResumeLayout(false);
             this.bindingNavigator2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.carwithRFIDBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessvisitBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rFIDmetkaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chauffeurBindingSource)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
@@ -1677,64 +1662,51 @@
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem закрытьToolStripMenuItem;
-        private bdRFIDDataSet bdRFIDDataSet;
         private System.Windows.Forms.DataGridView dataGridViewHistoryVisit;
-        private System.Windows.Forms.BindingSource historyvisitBindingSource;
-        private bdRFIDDataSetTableAdapters.history_visitTableAdapter history_visitTableAdapter;
         private System.Windows.Forms.DataGridView dataGridViewTypeVisit;
-        private System.Windows.Forms.BindingSource visittypeBindingSource;
-        private bdRFIDDataSetTableAdapters.visit_typeTableAdapter visit_typeTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn типпроездаDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.BindingSource carwithRFIDBindingSource;
-        private bdRFIDDataSetTableAdapters.car_with_RFIDTableAdapter car_with_RFIDTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.BindingSource accessvisitBindingSource;
-        private bdRFIDDataSetTableAdapters.access_visitTableAdapter access_visitTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView5;
-        private System.Windows.Forms.BindingSource chauffeurBindingSource;
-        private bdRFIDDataSetTableAdapters.chauffeurTableAdapter chauffeurTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView6;
-        private System.Windows.Forms.BindingSource carsBindingSource;
-        private bdRFIDDataSetTableAdapters.carsTableAdapter carsTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView7;
-        private System.Windows.Forms.BindingSource typecarBindingSource;
-        private bdRFIDDataSetTableAdapters.type_carTableAdapter type_carTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView9;
         private System.Windows.Forms.DataGridView dataGridView8;
-        private System.Windows.Forms.BindingSource statusactiveBindingSource;
-        private bdRFIDDataSetTableAdapters.status_activeTableAdapter status_activeTableAdapter;
+        private System.Windows.Forms.Button BtnSaveHistoryVisit;
+        private System.Windows.Forms.Button BtnSaveCarWithRFID;
+        private System.Windows.Forms.Button BtnSaveChauffeur;
+        private System.Windows.Forms.Button BtnSaveTypeCar;
+        private System.Windows.Forms.Button BtnSaveCars;
+        private System.Windows.Forms.Button BtnSaveRFIDMetka;
+        private SystemRFIDDataSet systemRFIDDataSet;
+        private System.Windows.Forms.BindingSource historyvisitBindingSource;
+        private SystemRFIDDataSetTableAdapters.history_visitTableAdapter history_visitTableAdapter;
+        private System.Windows.Forms.BindingSource typevisitBindingSource;
+        private SystemRFIDDataSetTableAdapters.type_visitTableAdapter type_visitTableAdapter;
+        private System.Windows.Forms.BindingSource carswithRFIDBindingSource;
+        private SystemRFIDDataSetTableAdapters.cars_with_RFIDTableAdapter cars_with_RFIDTableAdapter;
+        private System.Windows.Forms.BindingSource chauffeurBindingSource;
+        private SystemRFIDDataSetTableAdapters.chauffeurTableAdapter chauffeurTableAdapter;
+        private System.Windows.Forms.BindingSource carsBindingSource;
+        private SystemRFIDDataSetTableAdapters.carsTableAdapter carsTableAdapter;
+        private System.Windows.Forms.BindingSource typecarBindingSource;
+        private SystemRFIDDataSetTableAdapters.type_carTableAdapter type_carTableAdapter;
         private System.Windows.Forms.BindingSource rFIDmetkaBindingSource;
-        private bdRFIDDataSetTableAdapters.RFID_metkaTableAdapter rFID_metkaTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn датапроездаDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn машинаDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn типпроездаDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn датазаписиDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn epcDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn машиныDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn водительDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn доступвъездаDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn3;
+        private SystemRFIDDataSetTableAdapters.RFID_metkaTableAdapter rFID_metkaTableAdapter;
+        private System.Windows.Forms.BindingSource statusactiveBindingSource;
+        private SystemRFIDDataSetTableAdapters.status_activeTableAdapter status_activeTableAdapter;
+        private System.Windows.Forms.BindingSource accessvisitBindingSource;
+        private SystemRFIDDataSetTableAdapters.access_visitTableAdapter access_visitTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn типDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn доступDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn фамилияDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn имяDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn отчествоDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn водительскихправDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn типмашиныDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn типDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn машиныDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewComboBoxColumn типмашиныDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn статусDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn epcDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn датарегистрацииDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn статусактивностиDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -1807,11 +1779,24 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem5;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem5;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator17;
-        private System.Windows.Forms.Button BtnSaveHistoryVisit;
-        private System.Windows.Forms.Button BtnSaveCarWithRFID;
-        private System.Windows.Forms.Button BtnSaveChauffeur;
-        private System.Windows.Forms.Button BtnSaveTypeCar;
-        private System.Windows.Forms.Button BtnSaveCars;
-        private System.Windows.Forms.Button BtnSaveRFIDMetka;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn датазаписиDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn epcDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn машиныDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn водительDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn доступпроездаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn фамилияDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn имяDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn отчествоDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn водительскихправDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn epcDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn датарегистрацииDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn статусактивностиDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn датапроездаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn машинаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn типпроездаDataGridViewTextBoxColumn;
     }
 }

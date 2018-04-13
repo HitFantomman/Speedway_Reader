@@ -5,18 +5,18 @@
     <Setting Name="bdRFIDConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;User Id=root;Host=localhost;Port=3307;Database=bdRFID&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;Devart.Data.MySql&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">User Id=root;Host=localhost;Port=3307;Database=bdRFID</Value>
-    </Setting>
-    <Setting Name="bdRFIDConnectionString1" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;ConnectionString&gt;User Id=root;Host=localhost;Port=3307;Database=bdRFID;Unicode=True&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;Devart.Data.MySql&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">User Id=root;Host=localhost;Port=3307;Database=bdRFID;Unicode=True</Value>
+    </Setting>
+    <Setting Name="SystemRFIDConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;User Id=root;Host=localhost;Port=3307;Database=SystemRFID;Unicode=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;Devart.Data.MySql&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">User Id=root;Host=localhost;Port=3307;Database=SystemRFID;Unicode=True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

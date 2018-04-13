@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.TimerTags = new System.Timers.Timer();
             this.ButtonStart = new System.Windows.Forms.Button();
             this.ButtonStop = new System.Windows.Forms.Button();
@@ -42,12 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.ListTags = new System.Windows.Forms.ListBox();
             this.ButtonBD = new System.Windows.Forms.Button();
-            this.bdRFIDDataSet = new MainForm.bdRFIDDataSet();
-            this.historyvisitBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.history_visitTableAdapter = new MainForm.bdRFIDDataSetTableAdapters.history_visitTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.TimerTags)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdRFIDDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.historyvisitBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // TimerTags
@@ -206,20 +200,6 @@
             this.ButtonBD.UseVisualStyleBackColor = true;
             this.ButtonBD.Click += new System.EventHandler(this.ButtonBD_Click);
             // 
-            // bdRFIDDataSet
-            // 
-            this.bdRFIDDataSet.DataSetName = "bdRFIDDataSet";
-            this.bdRFIDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // historyvisitBindingSource
-            // 
-            this.historyvisitBindingSource.DataMember = "history_visit";
-            this.historyvisitBindingSource.DataSource = this.bdRFIDDataSet;
-            // 
-            // history_visitTableAdapter
-            // 
-            this.history_visitTableAdapter.ClearBeforeFill = true;
-            // 
             // Main
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -245,8 +225,6 @@
             this.Text = "Speedway Reader v1.0.0.0";
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TimerTags)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdRFIDDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.historyvisitBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,9 +245,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox ListTags;
         private System.Windows.Forms.Button ButtonBD;
-        private bdRFIDDataSet bdRFIDDataSet;
-        private System.Windows.Forms.BindingSource historyvisitBindingSource;
-        private bdRFIDDataSetTableAdapters.history_visitTableAdapter history_visitTableAdapter;
     }
 }
 
