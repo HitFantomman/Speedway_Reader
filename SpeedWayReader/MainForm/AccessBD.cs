@@ -19,7 +19,7 @@ namespace MainForm
 
         private void BtnAccess_Click(object sender, EventArgs e)
         {
-            if (BoxPassword.Text == "Admin")
+            if (BoxPassword.Text == "admin")
             {
                 this.Hide();
                 Tables BDform = new Tables();

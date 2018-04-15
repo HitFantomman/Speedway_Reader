@@ -86,5 +86,21 @@ namespace MainForm
             this.rFIDmetkaBindingSource.EndEdit();
             this.rFID_metkaTableAdapter.Update(systemRFIDDataSet);
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            DataView dvhistoryvisit = new DataView(systemRFIDDataSet.history_visit);
+            dvhistoryvisit.RowFilter = string.Format("Convert(машина, 'System.String') LIKE '%" + textBox1.Text + "%'"
+                                                        +"or Convert(дата_проезда, 'System.String') LIKE '%" + textBox1.Text + "%'");
+            dataGridViewHistoryVisit.DataSource = dvhistoryvisit;
+        }
+
+        private void BoxSearchChauffeur_TextChanged(object sender, EventArgs e)
+        {
+            chauffeurBindingSource.Filter = "Convert([фамилия], 'System.String') like \'%" + BoxSearchChauffeur.Text + "%\' or " +
+                                            "Convert([имя], 'System.String') like \'%" + BoxSearchChauffeur.Text + "%\' or " +
+                                            "Convert([отчество], 'System.String') like \'%" + BoxSearchChauffeur.Text + "%\' or " +
+                                            "Convert([№_водительских_прав], 'System.String') like \'%" + BoxSearchChauffeur.Text + "%\'";
+        }
     }
 }

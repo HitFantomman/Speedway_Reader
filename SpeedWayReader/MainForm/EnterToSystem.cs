@@ -24,7 +24,7 @@ namespace MainForm
 
         private void BtnEnter_Click(object sender, EventArgs e)
         {
-            if (BoxPassword.Text == "User")
+            if (BoxPassword.Text == "user")
             {
                 this.Hide();
                 Main mainform = new Main();
