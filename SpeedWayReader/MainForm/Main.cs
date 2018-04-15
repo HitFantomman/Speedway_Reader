@@ -347,8 +347,8 @@ namespace MainForm
         private void ButtonBD_Click(object sender, EventArgs e)
         {
             TimerTags.Enabled = false;
-            Tables table = new Tables();
-            table.ShowDialog();
+            AccessBD BDaccess = new AccessBD();
+            BDaccess.ShowDialog();
         }
 
         private void Main_Load(object sender, EventArgs e)

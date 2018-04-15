@@ -80,6 +80,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessBD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccessBD.Designer.cs">
+      <DependentUpon>AccessBD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnterToSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnterToSystem.Designer.cs">
+      <DependentUpon>EnterToSystem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +115,12 @@
     <Compile Include="Tables.Designer.cs">
       <DependentUpon>Tables.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AccessBD.resx">
+      <DependentUpon>AccessBD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnterToSystem.resx">
+      <DependentUpon>EnterToSystem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
