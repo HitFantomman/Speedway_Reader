@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TimerTags = new System.Timers.Timer();
             this.ButtonSettings = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -103,15 +103,15 @@
             this.PanelNumber.Controls.Add(this.BoxNumber);
             this.PanelNumber.Controls.Add(this.label1);
             this.PanelNumber.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PanelNumber.Location = new System.Drawing.Point(698, 12);
+            this.PanelNumber.Location = new System.Drawing.Point(809, 12);
             this.PanelNumber.Name = "PanelNumber";
-            this.PanelNumber.Size = new System.Drawing.Size(297, 69);
+            this.PanelNumber.Size = new System.Drawing.Size(186, 69);
             this.PanelNumber.TabIndex = 12;
             this.PanelNumber.Tag = "";
             // 
             // BoxNumber
             // 
-            this.BoxNumber.Location = new System.Drawing.Point(170, 21);
+            this.BoxNumber.Location = new System.Drawing.Point(45, 23);
             this.BoxNumber.Name = "BoxNumber";
             this.BoxNumber.ReadOnly = true;
             this.BoxNumber.Size = new System.Drawing.Size(110, 26);
@@ -120,7 +120,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 24);
+            this.label1.Location = new System.Drawing.Point(12, 1);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 19);
             this.label1.TabIndex = 0;
@@ -129,10 +129,10 @@
             // Data
             // 
             this.Data.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle5.Format = "F";
-            dataGridViewCellStyle5.NullValue = null;
-            this.Data.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle9.Format = "F";
+            dataGridViewCellStyle9.NullValue = null;
+            this.Data.DefaultCellStyle = dataGridViewCellStyle9;
             this.Data.HeaderText = "Дата";
             this.Data.Name = "Data";
             this.Data.ReadOnly = true;
@@ -140,8 +140,8 @@
             // machine
             // 
             this.machine.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.machine.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.machine.DefaultCellStyle = dataGridViewCellStyle10;
             this.machine.HeaderText = "Машина";
             this.machine.Name = "machine";
             this.machine.ReadOnly = true;
@@ -149,8 +149,8 @@
             // typ_visit
             // 
             this.typ_visit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.typ_visit.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.typ_visit.DefaultCellStyle = dataGridViewCellStyle11;
             this.typ_visit.HeaderText = "Тип проезда";
             this.typ_visit.Name = "typ_visit";
             this.typ_visit.ReadOnly = true;
@@ -158,8 +158,8 @@
             // access_typ
             // 
             this.access_typ.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.access_typ.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.access_typ.DefaultCellStyle = dataGridViewCellStyle12;
             this.access_typ.HeaderText = "Доступ";
             this.access_typ.Name = "access_typ";
             this.access_typ.ReadOnly = true;

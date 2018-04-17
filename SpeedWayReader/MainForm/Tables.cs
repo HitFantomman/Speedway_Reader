@@ -30,10 +30,6 @@ namespace MainForm
             this.status_activeTableAdapter.Fill(this.systemRFIDDataSet.status_active);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "systemRFIDDataSet.list_access". При необходимости она может быть перемещена или удалена.
             this.list_accessTableAdapter.Fill(this.systemRFIDDataSet.list_access);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "systemRFIDDataSet.list_access". При необходимости она может быть перемещена или удалена.
-            this.list_accessTableAdapter.Fill(this.systemRFIDDataSet.list_access);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "systemRFIDDataSet.RFID_metka". При необходимости она может быть перемещена или удалена.
-            this.rFID_metkaTableAdapter.Fill(this.systemRFIDDataSet.RFID_metka);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "systemRFIDDataSet.type_car". При необходимости она может быть перемещена или удалена.
             this.type_carTableAdapter.Fill(this.systemRFIDDataSet.type_car);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "systemRFIDDataSet.cars". При необходимости она может быть перемещена или удалена.
