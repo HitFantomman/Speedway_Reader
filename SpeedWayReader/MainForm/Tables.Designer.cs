@@ -35,7 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.BoxHistorySearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -67,7 +67,7 @@
             this.BtnSaveCarWithRFID = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.BoxSearchChauffeur = new System.Windows.Forms.TextBox();
+            this.BoxChauffeursSearch = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.bindingNavigator3 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem2 = new System.Windows.Forms.ToolStripButton();
@@ -189,6 +189,8 @@
             this.epcDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.номермашиныDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.статусактивностиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.BoxRFIDMetkaSearch = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
@@ -249,7 +251,7 @@
             // tabPage1
             // 
             this.tabPage1.AutoScroll = true;
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.BoxHistorySearch);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.bindingNavigator1);
             this.tabPage1.Controls.Add(this.BtnSaveHistoryVisit);
@@ -262,13 +264,13 @@
             this.tabPage1.Text = "История проездов";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // BoxHistorySearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(385, 279);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(337, 29);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.BoxHistorySearch.Location = new System.Drawing.Point(385, 279);
+            this.BoxHistorySearch.Name = "BoxHistorySearch";
+            this.BoxHistorySearch.Size = new System.Drawing.Size(357, 29);
+            this.BoxHistorySearch.TabIndex = 6;
+            this.BoxHistorySearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -581,7 +583,7 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.BoxSearchChauffeur);
+            this.tabPage5.Controls.Add(this.BoxChauffeursSearch);
             this.tabPage5.Controls.Add(this.label2);
             this.tabPage5.Controls.Add(this.bindingNavigator3);
             this.tabPage5.Controls.Add(this.BtnSaveChauffeur);
@@ -593,13 +595,13 @@
             this.tabPage5.Text = "Водители";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // BoxSearchChauffeur
+            // BoxChauffeursSearch
             // 
-            this.BoxSearchChauffeur.Location = new System.Drawing.Point(373, 253);
-            this.BoxSearchChauffeur.Name = "BoxSearchChauffeur";
-            this.BoxSearchChauffeur.Size = new System.Drawing.Size(404, 29);
-            this.BoxSearchChauffeur.TabIndex = 8;
-            this.BoxSearchChauffeur.TextChanged += new System.EventHandler(this.BoxSearchChauffeur_TextChanged);
+            this.BoxChauffeursSearch.Location = new System.Drawing.Point(373, 253);
+            this.BoxChauffeursSearch.Name = "BoxChauffeursSearch";
+            this.BoxChauffeursSearch.Size = new System.Drawing.Size(404, 29);
+            this.BoxChauffeursSearch.TabIndex = 8;
+            this.BoxChauffeursSearch.TextChanged += new System.EventHandler(this.BoxSearchChauffeur_TextChanged);
             // 
             // label2
             // 
@@ -1050,6 +1052,8 @@
             // tabPage7
             // 
             this.tabPage7.AutoScroll = true;
+            this.tabPage7.Controls.Add(this.BoxRFIDMetkaSearch);
+            this.tabPage7.Controls.Add(this.label3);
             this.tabPage7.Controls.Add(this.bindingNavigator6);
             this.tabPage7.Controls.Add(this.BtnSaveRFIDMetka);
             this.tabPage7.Controls.Add(this.dataGridView8);
@@ -1699,6 +1703,23 @@
             this.статусактивностиDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.статусактивностиDataGridViewTextBoxColumn.ValueMember = "код";
             // 
+            // BoxRFIDMetkaSearch
+            // 
+            this.BoxRFIDMetkaSearch.Location = new System.Drawing.Point(369, 271);
+            this.BoxRFIDMetkaSearch.Name = "BoxRFIDMetkaSearch";
+            this.BoxRFIDMetkaSearch.Size = new System.Drawing.Size(404, 29);
+            this.BoxRFIDMetkaSearch.TabIndex = 10;
+            this.BoxRFIDMetkaSearch.TextChanged += new System.EventHandler(this.BoxRFIDMetkaSearch_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(298, 271);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 22);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Поиск";
+            // 
             // Tables
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1865,9 +1886,9 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem5;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem5;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator17;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox BoxHistorySearch;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox BoxSearchChauffeur;
+        private System.Windows.Forms.TextBox BoxChauffeursSearch;
         private System.Windows.Forms.Label label2;
         private SystemRFIDDataSet systemRFIDDataSet;
         private System.Windows.Forms.BindingSource historyvisitBindingSource;
@@ -1930,5 +1951,7 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn epcDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn номермашиныDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn статусактивностиDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox BoxRFIDMetkaSearch;
+        private System.Windows.Forms.Label label3;
     }
 }

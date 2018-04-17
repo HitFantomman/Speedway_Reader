@@ -88,18 +88,18 @@ namespace MainForm
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             DataView dvhistoryvisit = new DataView(systemRFIDDataSet.history_visit);
-            dvhistoryvisit.RowFilter = string.Format("Convert(epc, 'System.String') LIKE '%" + textBox1.Text + "%'"
-                                                        +"or Convert(дата_проезда, 'System.String') LIKE '%" + textBox1.Text + "%'"
-                                                        + "or Convert(тип_проезда, 'System.String') LIKE '%" + textBox1.Text + "%'");
+            dvhistoryvisit.RowFilter = string.Format("Convert(epc, 'System.String') LIKE '%" + BoxHistorySearch.Text + "%'"
+                                                        +"or Convert(дата_проезда, 'System.String') LIKE '%" + BoxHistorySearch.Text + "%'"
+                                                        + "or Convert(тип_проезда, 'System.String') LIKE '%" + BoxHistorySearch.Text + "%'");
             dataGridViewHistoryVisit.DataSource = dvhistoryvisit;
         }
 
         private void BoxSearchChauffeur_TextChanged(object sender, EventArgs e)
         {
-            chauffeurBindingSource.Filter = "Convert([фамилия], 'System.String') like \'%" + BoxSearchChauffeur.Text + "%\' or " +
-                                            "Convert([имя], 'System.String') like \'%" + BoxSearchChauffeur.Text + "%\' or " +
-                                            "Convert([отчество], 'System.String') like \'%" + BoxSearchChauffeur.Text + "%\' or " +
-                                            "Convert([№_водительских_прав], 'System.String') like \'%" + BoxSearchChauffeur.Text + "%\'";
+            chauffeurBindingSource.Filter = "Convert([фамилия], 'System.String') like \'%" + BoxChauffeursSearch.Text + "%\' or " +
+                                            "Convert([имя], 'System.String') like \'%" + BoxChauffeursSearch.Text + "%\' or " +
+                                            "Convert([отчество], 'System.String') like \'%" + BoxChauffeursSearch.Text + "%\' or " +
+                                            "Convert([№_водительских_прав], 'System.String') like \'%" + BoxChauffeursSearch.Text + "%\'";
         }
 
         private void BtnListAccessSave_Click(object sender, EventArgs e)
@@ -107,6 +107,11 @@ namespace MainForm
             this.Validate();
             this.listaccessBindingSource.EndEdit();
             this.list_accessTableAdapter.Update(systemRFIDDataSet);
+        }
+
+        private void BoxRFIDMetkaSearch_TextChanged(object sender, EventArgs e)
+        {
+            rFIDmetkaBindingSource.Filter = "Convert([EPC], 'System.String') like \'%" + BoxRFIDMetkaSearch.Text + "%\'";
         }
     }
 }
