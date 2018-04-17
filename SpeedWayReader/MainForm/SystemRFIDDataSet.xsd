@@ -423,6 +423,25 @@ WHERE        (код = :Original_код) AND (epc = :Original_epc) AND (`дат�
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="viewhstoryvisitTableAdapter" GeneratorDataComponentClassName="viewhstoryvisitTableAdapter" Name="viewhstoryvisit" UserDataComponentName="viewhstoryvisitTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SystemRFIDConnectionString (Settings)" DbObjectName="SystemRFID.viewhstoryvisit" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT код, номер_машины, дата_проезда, тип FROM SystemRFID.viewhstoryvisit</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="код" DataSetColumn="код" />
+              <Mapping SourceColumn="номер_машины" DataSetColumn="номер_машины" />
+              <Mapping SourceColumn="дата_проезда" DataSetColumn="дата_проезда" />
+              <Mapping SourceColumn="тип" DataSetColumn="тип" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -515,6 +534,16 @@ WHERE        (код = :Original_код) AND (epc = :Original_epc) AND (`дат�
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="viewhstoryvisit" msprop:Generator_TableClassName="viewhstoryvisitDataTable" msprop:Generator_TableVarName="tableviewhstoryvisit" msprop:Generator_TablePropName="viewhstoryvisit" msprop:Generator_RowDeletingName="viewhstoryvisitRowDeleting" msprop:Generator_RowChangingName="viewhstoryvisitRowChanging" msprop:Generator_RowEvHandlerName="viewhstoryvisitRowChangeEventHandler" msprop:Generator_RowDeletedName="viewhstoryvisitRowDeleted" msprop:Generator_UserTableName="viewhstoryvisit" msprop:Generator_RowChangedName="viewhstoryvisitRowChanged" msprop:Generator_RowEvArgName="viewhstoryvisitRowChangeEvent" msprop:Generator_RowClassName="viewhstoryvisitRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="код" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnкод" msprop:Generator_ColumnPropNameInRow="код" msprop:Generator_ColumnPropNameInTable="кодColumn" msprop:Generator_UserColumnName="код" type="xs:int" />
+              <xs:element name="номер_машины" msprop:Generator_ColumnVarNameInTable="columnномер_машины" msprop:Generator_ColumnPropNameInRow="номер_машины" msprop:Generator_ColumnPropNameInTable="номер_машиныColumn" msprop:Generator_UserColumnName="номер_машины" type="xs:string" />
+              <xs:element name="дата_проезда" msprop:Generator_ColumnVarNameInTable="columnдата_проезда" msprop:Generator_ColumnPropNameInRow="дата_проезда" msprop:Generator_ColumnPropNameInTable="дата_проездаColumn" msprop:Generator_UserColumnName="дата_проезда" type="xs:dateTime" />
+              <xs:element name="тип" msprop:Generator_ColumnVarNameInTable="columnтип" msprop:Generator_ColumnPropNameInRow="тип" msprop:Generator_ColumnPropNameInTable="типColumn" msprop:Generator_UserColumnName="тип" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -551,6 +580,10 @@ WHERE        (код = :Original_код) AND (epc = :Original_epc) AND (`дат�
     </xs:unique>
     <xs:unique name="type_visit_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:type_visit" />
+      <xs:field xpath="mstns:код" />
+    </xs:unique>
+    <xs:unique name="viewhstoryvisit_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:viewhstoryvisit" />
       <xs:field xpath="mstns:код" />
     </xs:unique>
   </xs:element>

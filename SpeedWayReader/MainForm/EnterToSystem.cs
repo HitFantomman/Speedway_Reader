@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Impinj.OctaneSdk;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,18 +18,13 @@ namespace MainForm
             InitializeComponent();
         }
 
-        private void BtnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void BtnEnter_Click(object sender, EventArgs e)
         {
-            if (BoxPassword.Text == "user")
+            if (BoxPassword.Text == "user" && BoxLogin.Text=="user")
             {
                 this.Hide();
-                Main mainform = new Main();
-                mainform.ShowDialog();
+                Main formmain = new Main();
+                formmain.ShowDialog();
             }
             else
             {

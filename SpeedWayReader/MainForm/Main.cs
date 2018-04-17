@@ -16,13 +16,41 @@ namespace MainForm
 {
     public partial class Main : Form
     {
+        FormSettings fsettings = new FormSettings();
+        private ImpinjReader reader = new ImpinjReader();
+        static LLRPClient readerR = new LLRPClient();
         public Main()
         {
             InitializeComponent();
             try
             {
-                // Вызов метода отображения информации с меток
-                //reader.TagsReported += OnTagsReported;(снять)
+                // Подключение к считывателю.
+                // Подключение по введенному IP или имени  считывателя
+                //string hostname = Convert.ToString(TextIP.Text);(снять)
+                //reader.Connect(hostname);//(снять)
+                if (true)//reader.IsConnected(заменить на true)
+                {
+                    Random rand = new Random();
+                    TimerTags.Enabled = true;
+                    TimerTags.Interval = rand.Next(1000, 5000);
+                    // Подготовка к считыванию
+                    //if (!reader.QueryStatus().IsSingulating)(снять)
+                    //{(снять)
+                    //    // Старт считывания
+                    //    reader.Start();(снять)
+                    //    Add_RoSpec();(снять)
+                    //    Enable_RoSpec();(снять)
+                    //}(снять)
+                    // Вызов метода отображения информации с меток
+                    //reader.TagsReported += OnTagsReported;(снять)
+                }
+                else
+                {
+                    MessageBox.Show("Считыватель не подключен!", "Подключение", MessageBoxButtons.OK);
+                    //reader.Disconnect();(снять)
+                    TimerTags.Enabled = false;
+                    fsettings.ShowDialog();
+                }
             }
             catch (OctaneSdkException ex)
             {
@@ -35,9 +63,6 @@ namespace MainForm
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private ImpinjReader reader = new ImpinjReader();
-        static LLRPClient readerR = new LLRPClient();
 
         static void Delete_RoSpec()
         {
@@ -126,7 +151,7 @@ namespace MainForm
             
             foreach (var tag in list)
             {
-                ListTags.Items.Add(ListTags.Items.Count + ") EPC: " + tag.Epc + "\n   Номер антенны: " + tag.AntennaPortNumber + "\n   Дата и время: " + now);
+                //ListTags.Items.Add(ListTags.Items.Count + ") EPC: " + tag.Epc + "\n   Номер антенны: " + tag.AntennaPortNumber + "\n   Дата и время: " + now);
             }
         }
 
@@ -140,13 +165,27 @@ namespace MainForm
             //Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Normal, action);(снять)
         }
 
-        int counter = 1;
         private void UpdateListah()
         {
             DateTime now = DateTime.Now;
             Random Ran = new Random();
-            long Epc = Ran.Next(100000000, 500000000) + Ran.Next(100000000, 500000000);
-            string machine = "а" + Convert.ToString(Ran.Next(100, 1000)) + "бв";
+            int car = Ran.Next(1, 4);
+            string carT = "";
+            switch (car)
+            {
+                case 1:
+                    carT = "Легковой";
+                    break;
+                case 2:
+                    carT = "Пассажирский";
+                    break;
+                case 3:
+                    carT = "Грузовой";
+                    break;
+                default:
+                    break;
+            }
+            string Nmachine = "а" + Convert.ToString(Ran.Next(100, 1000)) + "бв";
             int AntennaPortNumber = Ran.Next(1, 3);
             bool visit=new bool();
             visit=Convert.ToBoolean(Ran.Next(0, 2));
@@ -156,57 +195,38 @@ namespace MainForm
             string tvisit;
             if (AntennaPortNumber == 1) tvisit = "Въезд";
             else tvisit = "Выезд";
-            //if (bdRFIDDataSet.RFID_metka.EpcColumn.Caption==EPC.)
-            //{
-                
-            //}
-            ListTags.Items.Add(counter + ") Дата и время: " + now + "\n   Номер антенны: " + AntennaPortNumber);
-            counter += 1;
-            ListTags.Items.Add("\n   EPC: " + Epc + "\n   № машины: " + machine + "\n   Тип проезда: " + tvisit + "\n   Доступ: " + avisit);
+            BoxNumber.Text = Nmachine;
+            DGHistoryVisit.Rows.Add(now, carT, tvisit, avisit);
+            //ListTags.Items.Add(counter + ") Дата и время: " + now + "\n   Номер антенны: " + AntennaPortNumber);
+            //ListTags.Items.Add("\n   EPC: " + Epc + "\n   № машины: " + machine + "\n   Тип проезда: " + tvisit + "\n   Доступ: " + avisit);
             //GridTags.Rows.(GridTags.Rows.GetNextRow, now, Epc, 0, AntennaPortNumber);
-            if (visit == false)
-            {
-                TimerTags.Enabled = false;
-                MessageBox.Show("Машине на проезде въезд/выезд запрещен!!!");
-                TimerTags.Enabled = true;
-            }
+            //if (visit == false)
+            //{
+            //    TimerTags.Enabled = false;
+            //    MessageBox.Show("Машине на проезде въезд/выезд запрещен!!!");
+            //    TimerTags.Enabled = true;
+            //}
         }
 
-        private void ButtonStart_Click(object sender, EventArgs e)
+        private void ButtonClear_Click(object sender, EventArgs e)
         {
-            ButtonStart.Enabled = false;
-            ButtonStop.Enabled = true;
-            ListTags.Enabled = true;
-            Random rand = new Random();
+            //ListTags.Items.Clear();
+        }
+
+        private void ButtonSettings_Click(object sender, EventArgs e)
+        {
+            TimerTags.Enabled = false;
+            fsettings.ShowDialog();
             TimerTags.Enabled = true;
-            TimerTags.Interval = rand.Next(1000, 5000);
-            try
-            {
-                // Подготовка к считыванию
-                //if (!reader.QueryStatus().IsSingulating)(снять)
-                //{(снять)
-                //    // Старт считывания
-                //    reader.Start();(снять)
-                //    Add_RoSpec();(снять)
-                //    Enable_RoSpec();(снять)
-                //}(снять)
-            }
-            catch (OctaneSdkException ex)
-            {
-                // Ошибки пакета Octane
-                MessageBox.Show(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                // Ошибки программы
-                MessageBox.Show(ex.Message);
-            }
         }
 
-        private void ButtonStop_Click(object sender, EventArgs e)
+        private void TimerTags_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
-            ButtonStart.Enabled = true;
-            ButtonStop.Enabled = false;
+            UpdateListah();
+        }
+        
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
             TimerTags.Enabled = false;
             try
             {
@@ -216,6 +236,31 @@ namespace MainForm
                 //    Delete_RoSpec();(снять)
                 //    reader.Stop();(снять)
                 //}(снять)
+                if (true)//reader.IsConnected(заменить на true)
+                {
+                    try
+                    {
+                        // Отключение считывания считывателя
+                        //if (reader.QueryStatus().IsSingulating)(снять)
+                        //{(снять)
+                        //    Delete_RoSpec();(снять)
+                        //    reader.Stop();(снять)
+                        //}(снять)
+                        // Отсоединение от считывателя
+                        //reader.Disconnect();(снять)
+                        Application.Exit();
+                    }
+                    catch (OctaneSdkException ex)
+                    {
+                        // Ошибки пакета Octane
+                        MessageBox.Show(ex.Message);
+                    }
+                    catch (Exception ex)
+                    {
+                        // Ошибки программы
+                        MessageBox.Show(ex.Message);
+                    }
+                }
             }
             catch (OctaneSdkException ex)
             {
@@ -227,133 +272,6 @@ namespace MainForm
                 // Ошибки программы
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void ButtonClear_Click(object sender, EventArgs e)
-        {
-            ListTags.Items.Clear();
-        }
-
-        private void ButtonConnect_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Подключение к считывателю.
-                // Подключение по введенному IP или имени  считывателя
-                //string hostname = Convert.ToString(TextIP.Text);(снять)
-                //reader.Connect(hostname);//(снять)
-                if (true)//reader.IsConnected(заменить на true)
-                {
-                    MessageBox.Show("Считыватель подключен!");
-                    ButtonStart.Enabled = true;
-                    ListTags.Enabled = true;
-                    ButtonSettings.Enabled = true;
-                    ButtonClear.Enabled = true;
-                    // Получение настроек по умолчанию со считывателя
-                    //Settings settings = reader.QueryDefaultSettings();(снять)
-                    // Подключение антенны
-                    //settings.Report.IncludeAntennaPortNumber = true;(снять)
-                    //settings.ReaderMode = ReaderMode.AutoSetDenseReader;(снять)
-                    //settings.SearchMode = SearchMode.SingleTarget;(снять)
-                    //settings.Session = 3;(снять)
-                    // Доступ ко всем антеннам
-                    //settings.Antennas.EnableAll();(снять)
-                    // Включение максимальноя мощности и чувствительности
-                    //settings.Antennas.TxPowerMax = true;(снять)
-                    //settings.Antennas.RxSensitivityMax = true;(снять)
-                    // Применить настройки
-                    //reader.ApplySettings(settings);(снять)
-                }
-                
-            }
-            catch (OctaneSdkException ex)
-            {
-                // Ошибка пакета Octane
-                MessageBox.Show(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                // Ошибки программы
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void ButtonClose_Click(object sender, EventArgs e)
-        {
-            if (true)//reader.IsConnected(заменить на true)
-            {
-                try
-                {
-                    // Отключение считывания считывателя
-                    //if (reader.QueryStatus().IsSingulating)(снять)
-                    //{(снять)
-                    //    Delete_RoSpec();(снять)
-                    //    reader.Stop();(снять)
-                    //}(снять)
-                    // Отсоединение от считывателя
-                    //reader.Disconnect();(снять)
-                    Application.Exit();
-                }
-                catch (OctaneSdkException ex)
-                {
-                    // Ошибки пакета Octane
-                    MessageBox.Show(ex.Message);
-                }
-                catch (Exception ex)
-                {
-                    // Ошибки программы
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
-
-        private void ButtonSettings_Click(object sender, EventArgs e)
-        {
-            //FeatureSet features = reader.QueryFeatureSet();
-            //Status status = reader.QueryStatus();
-            //Settings settings = reader.QuerySettings();
-            MessageBox.Show("Функции считывателя\n--------------------\n" +
-                "Модель: "/* + features.ModelName*/ + "\n" +
-                "Номер модели: "/* + features.ModelNumber*/ + "\n" +
-                "Версия прошивки: "/* + features.FirmwareVersion*/ + "\n" +
-                "Количество антенн: "/* + features.AntennaCount*/ + "\n\n" +
-                "Статус считывателя\n--------------------\n" +
-                "Статус подключения: "/* + status.IsConnected*/ + "\n" +
-                "Singulation: "/* + status.IsSingulating*/ + "\n" +
-                "Температура: "/* + status.TemperatureInCelsius*/ + "\n\n" +
-                "Настройки считывателя\n--------------------\n" +
-                "Режим: "/* + settings.ReaderMode*/ + "\n" +
-                "Режим поиска: "/* + settings.SearchMode*/ + "\n" +
-                "Сессия: "/* + settings.Session*/);
-        }
-
-        private void ButtonDisconnect_Click(object sender, EventArgs e)
-        {
-            //reader.Disconnect();(снять)
-            ButtonStart.Enabled = false;
-            ButtonStop.Enabled = false;
-            ListTags.Enabled = false;
-            ButtonSettings.Enabled = false;
-            ButtonClear.Enabled = false;
-            TimerTags.Enabled = false;
-            MessageBox.Show("Считыватель отключен!");
-        }
-
-        private void TimerTags_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
-        {
-            UpdateListah();
-        }
-
-        private void ButtonBD_Click(object sender, EventArgs e)
-        {
-            TimerTags.Enabled = false;
-            AccessBD BDaccess = new AccessBD();
-            BDaccess.ShowDialog();
-        }
-
-        private void Main_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

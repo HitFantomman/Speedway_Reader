@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3307
--- Время создания: Апр 13 2018 г., 18:40
+-- Время создания: Апр 17 2018 г., 13:17
 -- Версия сервера: 5.6.38
 -- Версия PHP: 5.6.32
 
@@ -21,25 +21,6 @@ SET time_zone = "+00:00";
 --
 -- База данных: `SystemRFID`
 --
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `access_visit`
---
-
-CREATE TABLE `access_visit` (
-  `код` int(11) NOT NULL,
-  `доступ` varchar(256) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `access_visit`
---
-
-INSERT INTO `access_visit` (`код`, `доступ`) VALUES
-(1, 'Разрешено'),
-(2, 'Запрещено');
 
 -- --------------------------------------------------------
 
@@ -74,7 +55,7 @@ CREATE TABLE `cars_with_RFID` (
   `epc` int(11) NOT NULL,
   `№_машины` int(11) NOT NULL,
   `водитель` int(11) NOT NULL,
-  `доступ_проезда` int(11) NOT NULL
+  `доступ_проезда` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -110,8 +91,15 @@ CREATE TABLE `history_visit` (
   `код` int(11) NOT NULL,
   `дата_проезда` date NOT NULL,
   `машина` int(11) NOT NULL,
-  `тип_проезда` int(11) NOT NULL
+  `тип_проезда` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `history_visit`
+--
+
+INSERT INTO `history_visit` (`код`, `дата_проезда`, `машина`, `тип_проезда`) VALUES
+(1, '2018-01-23', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -121,17 +109,10 @@ CREATE TABLE `history_visit` (
 
 CREATE TABLE `RFID_metka` (
   `код` int(11) NOT NULL,
-  `epc` varchar(15) NOT NULL,
+  `epc` int(26) NOT NULL,
   `дата_регистрации` date NOT NULL,
   `статус_активности` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `RFID_metka`
---
-
-INSERT INTO `RFID_metka` (`код`, `epc`, `дата_регистрации`, `статус_активности`) VALUES
-(1, '1245124512', '2018-09-23', 1);
 
 -- --------------------------------------------------------
 
@@ -149,8 +130,10 @@ CREATE TABLE `status_active` (
 --
 
 INSERT INTO `status_active` (`код`, `статус`) VALUES
-(1, 'Активен'),
-(2, 'Не активен');
+(3, 'Активный'),
+(4, 'Не активный'),
+(5, 'Ожидает регистрации'),
+(6, 'Просрочен');
 
 -- --------------------------------------------------------
 
@@ -172,34 +155,9 @@ INSERT INTO `type_car` (`код`, `тип`) VALUES
 (2, 'Грузовой'),
 (3, 'Пассажирский');
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `type_visit`
---
-
-CREATE TABLE `type_visit` (
-  `код` int(11) NOT NULL,
-  `тип` varchar(256) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `type_visit`
---
-
-INSERT INTO `type_visit` (`код`, `тип`) VALUES
-(1, 'Въезд'),
-(2, 'Выезд');
-
 --
 -- Индексы сохранённых таблиц
 --
-
---
--- Индексы таблицы `access_visit`
---
-ALTER TABLE `access_visit`
-  ADD PRIMARY KEY (`код`);
 
 --
 -- Индексы таблицы `cars`
@@ -215,8 +173,7 @@ ALTER TABLE `cars_with_RFID`
   ADD PRIMARY KEY (`код`),
   ADD KEY `epc` (`epc`),
   ADD KEY `№_машины` (`№_машины`),
-  ADD KEY `водитель` (`водитель`),
-  ADD KEY `доступ_проезда` (`доступ_проезда`);
+  ADD KEY `водитель` (`водитель`);
 
 --
 -- Индексы таблицы `chauffeur`
@@ -229,8 +186,7 @@ ALTER TABLE `chauffeur`
 --
 ALTER TABLE `history_visit`
   ADD PRIMARY KEY (`код`),
-  ADD KEY `машина` (`машина`),
-  ADD KEY `тип_проезда` (`тип_проезда`);
+  ADD KEY `машина` (`машина`);
 
 --
 -- Индексы таблицы `RFID_metka`
@@ -252,20 +208,8 @@ ALTER TABLE `type_car`
   ADD PRIMARY KEY (`код`);
 
 --
--- Индексы таблицы `type_visit`
---
-ALTER TABLE `type_visit`
-  ADD PRIMARY KEY (`код`);
-
---
 -- AUTO_INCREMENT для сохранённых таблиц
 --
-
---
--- AUTO_INCREMENT для таблицы `access_visit`
---
-ALTER TABLE `access_visit`
-  MODIFY `код` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `cars`
@@ -277,7 +221,7 @@ ALTER TABLE `cars`
 -- AUTO_INCREMENT для таблицы `cars_with_RFID`
 --
 ALTER TABLE `cars_with_RFID`
-  MODIFY `код` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `код` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `chauffeur`
@@ -289,31 +233,25 @@ ALTER TABLE `chauffeur`
 -- AUTO_INCREMENT для таблицы `history_visit`
 --
 ALTER TABLE `history_visit`
-  MODIFY `код` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `код` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `RFID_metka`
 --
 ALTER TABLE `RFID_metka`
-  MODIFY `код` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `код` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `status_active`
 --
 ALTER TABLE `status_active`
-  MODIFY `код` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `код` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT для таблицы `type_car`
 --
 ALTER TABLE `type_car`
   MODIFY `код` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT для таблицы `type_visit`
---
-ALTER TABLE `type_visit`
-  MODIFY `код` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
@@ -331,14 +269,12 @@ ALTER TABLE `cars`
 ALTER TABLE `cars_with_RFID`
   ADD CONSTRAINT `cars_with_rfid_ibfk_1` FOREIGN KEY (`№_машины`) REFERENCES `cars` (`код`) ON UPDATE CASCADE,
   ADD CONSTRAINT `cars_with_rfid_ibfk_2` FOREIGN KEY (`epc`) REFERENCES `RFID_metka` (`код`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `cars_with_rfid_ibfk_3` FOREIGN KEY (`доступ_проезда`) REFERENCES `access_visit` (`код`) ON UPDATE CASCADE,
   ADD CONSTRAINT `cars_with_rfid_ibfk_4` FOREIGN KEY (`водитель`) REFERENCES `chauffeur` (`код`) ON UPDATE CASCADE;
 
 --
 -- Ограничения внешнего ключа таблицы `history_visit`
 --
 ALTER TABLE `history_visit`
-  ADD CONSTRAINT `history_visit_ibfk_1` FOREIGN KEY (`тип_проезда`) REFERENCES `type_visit` (`код`) ON UPDATE CASCADE,
   ADD CONSTRAINT `history_visit_ibfk_2` FOREIGN KEY (`машина`) REFERENCES `cars_with_RFID` (`код`) ON UPDATE CASCADE;
 
 --

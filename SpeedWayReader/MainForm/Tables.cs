@@ -102,5 +102,11 @@ namespace MainForm
                                             "Convert([отчество], 'System.String') like \'%" + BoxSearchChauffeur.Text + "%\' or " +
                                             "Convert([№_водительских_прав], 'System.String') like \'%" + BoxSearchChauffeur.Text + "%\'";
         }
+
+        private void поИсторииПроездовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportsBD.ReportHistoryVisit rhv = new ReportsBD.ReportHistoryVisit();
+            rhv.ShowDialog();
+        }
     }
 }
