@@ -24,10 +24,14 @@ namespace MainForm
 
         private void Tables_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "systemRFIDDataSet.access_visit". При необходимости она может быть перемещена или удалена.
-            this.access_visitTableAdapter.Fill(this.systemRFIDDataSet.access_visit);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "systemRFIDDataSet1.RFID_metka". При необходимости она может быть перемещена или удалена.
+            this.rFID_metkaTableAdapter.Fill(this.systemRFIDDataSet1.RFID_metka);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "systemRFIDDataSet.status_active". При необходимости она может быть перемещена или удалена.
             this.status_activeTableAdapter.Fill(this.systemRFIDDataSet.status_active);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "systemRFIDDataSet.list_access". При необходимости она может быть перемещена или удалена.
+            this.list_accessTableAdapter.Fill(this.systemRFIDDataSet.list_access);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "systemRFIDDataSet.list_access". При необходимости она может быть перемещена или удалена.
+            this.list_accessTableAdapter.Fill(this.systemRFIDDataSet.list_access);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "systemRFIDDataSet.RFID_metka". При необходимости она может быть перемещена или удалена.
             this.rFID_metkaTableAdapter.Fill(this.systemRFIDDataSet.RFID_metka);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "systemRFIDDataSet.type_car". При необходимости она может быть перемещена или удалена.
@@ -38,8 +42,6 @@ namespace MainForm
             this.chauffeurTableAdapter.Fill(this.systemRFIDDataSet.chauffeur);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "systemRFIDDataSet.cars_with_RFID". При необходимости она может быть перемещена или удалена.
             this.cars_with_RFIDTableAdapter.Fill(this.systemRFIDDataSet.cars_with_RFID);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "systemRFIDDataSet.type_visit". При необходимости она может быть перемещена или удалена.
-            this.type_visitTableAdapter.Fill(this.systemRFIDDataSet.type_visit);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "systemRFIDDataSet.history_visit". При необходимости она может быть перемещена или удалена.
             this.history_visitTableAdapter.Fill(this.systemRFIDDataSet.history_visit);
 
@@ -90,8 +92,9 @@ namespace MainForm
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             DataView dvhistoryvisit = new DataView(systemRFIDDataSet.history_visit);
-            dvhistoryvisit.RowFilter = string.Format("Convert(машина, 'System.String') LIKE '%" + textBox1.Text + "%'"
-                                                        +"or Convert(дата_проезда, 'System.String') LIKE '%" + textBox1.Text + "%'");
+            dvhistoryvisit.RowFilter = string.Format("Convert(epc, 'System.String') LIKE '%" + textBox1.Text + "%'"
+                                                        +"or Convert(дата_проезда, 'System.String') LIKE '%" + textBox1.Text + "%'"
+                                                        + "or Convert(тип_проезда, 'System.String') LIKE '%" + textBox1.Text + "%'");
             dataGridViewHistoryVisit.DataSource = dvhistoryvisit;
         }
 
@@ -103,10 +106,11 @@ namespace MainForm
                                             "Convert([№_водительских_прав], 'System.String') like \'%" + BoxSearchChauffeur.Text + "%\'";
         }
 
-        private void поИсторииПроездовToolStripMenuItem_Click(object sender, EventArgs e)
+        private void BtnListAccessSave_Click(object sender, EventArgs e)
         {
-            ReportsBD.ReportHistoryVisit rhv = new ReportsBD.ReportHistoryVisit();
-            rhv.ShowDialog();
+            this.Validate();
+            this.listaccessBindingSource.EndEdit();
+            this.list_accessTableAdapter.Update(systemRFIDDataSet);
         }
     }
 }

@@ -37,7 +37,7 @@
             // 
             // BoxPassword
             // 
-            this.BoxPassword.Location = new System.Drawing.Point(106, 122);
+            this.BoxPassword.Location = new System.Drawing.Point(124, 122);
             this.BoxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.BoxPassword.Name = "BoxPassword";
             this.BoxPassword.Size = new System.Drawing.Size(237, 26);
@@ -47,7 +47,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 122);
+            this.label3.Location = new System.Drawing.Point(37, 125);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 19);
             this.label3.TabIndex = 3;
@@ -75,7 +75,7 @@
             // 
             // BoxLogin
             // 
-            this.BoxLogin.Location = new System.Drawing.Point(106, 78);
+            this.BoxLogin.Location = new System.Drawing.Point(124, 78);
             this.BoxLogin.Name = "BoxLogin";
             this.BoxLogin.Size = new System.Drawing.Size(237, 26);
             this.BoxLogin.TabIndex = 6;

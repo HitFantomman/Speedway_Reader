@@ -81,10 +81,6 @@ namespace MainForm
                 ListStatus.Items.Add("Сессия: "/* + settings.Session*/);
             }
         }
-        private void BtnClose_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void BtnDB_Click(object sender, EventArgs e)
         {

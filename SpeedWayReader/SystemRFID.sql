@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3307
--- Время создания: Апр 17 2018 г., 13:17
+-- Время создания: Апр 17 2018 г., 18:13
 -- Версия сервера: 5.6.38
 -- Версия PHP: 5.6.32
 
@@ -31,6 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `cars` (
   `код` int(11) NOT NULL,
   `№_машины` varchar(256) NOT NULL,
+  `водитель` int(11) NOT NULL,
   `тип_машины` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -38,10 +39,10 @@ CREATE TABLE `cars` (
 -- Дамп данных таблицы `cars`
 --
 
-INSERT INTO `cars` (`код`, `№_машины`, `тип_машины`) VALUES
-(1, 'в256ву', 2),
-(2, 'а132ка', 1),
-(3, 'о723ао', 3);
+INSERT INTO `cars` (`код`, `№_машины`, `водитель`, `тип_машины`) VALUES
+(1, 'в256ву', 1, 2),
+(2, 'а132ка', 2, 1),
+(3, 'о723ао', 3, 3);
 
 -- --------------------------------------------------------
 
@@ -54,8 +55,7 @@ CREATE TABLE `cars_with_RFID` (
   `дата_записи` date NOT NULL,
   `epc` int(11) NOT NULL,
   `№_машины` int(11) NOT NULL,
-  `водитель` int(11) NOT NULL,
-  `доступ_проезда` tinyint(1) NOT NULL
+  `статус_активности` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -90,16 +90,21 @@ INSERT INTO `chauffeur` (`код`, `фамилия`, `имя`, `отчество
 CREATE TABLE `history_visit` (
   `код` int(11) NOT NULL,
   `дата_проезда` date NOT NULL,
-  `машина` int(11) NOT NULL,
+  `epc` int(11) NOT NULL,
   `тип_проезда` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
 --
--- Дамп данных таблицы `history_visit`
+-- Структура таблицы `list_access`
 --
 
-INSERT INTO `history_visit` (`код`, `дата_проезда`, `машина`, `тип_проезда`) VALUES
-(1, '2018-01-23', 1, 2);
+CREATE TABLE `list_access` (
+  `код` int(11) NOT NULL,
+  `номер_машины` int(11) NOT NULL,
+  `статус_доступа` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -109,9 +114,7 @@ INSERT INTO `history_visit` (`код`, `дата_проезда`, `машина`
 
 CREATE TABLE `RFID_metka` (
   `код` int(11) NOT NULL,
-  `epc` int(26) NOT NULL,
-  `дата_регистрации` date NOT NULL,
-  `статус_активности` int(11) NOT NULL
+  `epc` int(26) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -164,7 +167,8 @@ INSERT INTO `type_car` (`код`, `тип`) VALUES
 --
 ALTER TABLE `cars`
   ADD PRIMARY KEY (`код`),
-  ADD KEY `тип_машины` (`тип_машины`);
+  ADD KEY `тип_машины` (`тип_машины`),
+  ADD KEY `водитель` (`водитель`);
 
 --
 -- Индексы таблицы `cars_with_RFID`
@@ -173,7 +177,7 @@ ALTER TABLE `cars_with_RFID`
   ADD PRIMARY KEY (`код`),
   ADD KEY `epc` (`epc`),
   ADD KEY `№_машины` (`№_машины`),
-  ADD KEY `водитель` (`водитель`);
+  ADD KEY `статус_активности` (`статус_активности`);
 
 --
 -- Индексы таблицы `chauffeur`
@@ -186,14 +190,20 @@ ALTER TABLE `chauffeur`
 --
 ALTER TABLE `history_visit`
   ADD PRIMARY KEY (`код`),
-  ADD KEY `машина` (`машина`);
+  ADD KEY `машина` (`epc`);
+
+--
+-- Индексы таблицы `list_access`
+--
+ALTER TABLE `list_access`
+  ADD PRIMARY KEY (`код`),
+  ADD KEY `номер_машины` (`номер_машины`);
 
 --
 -- Индексы таблицы `RFID_metka`
 --
 ALTER TABLE `RFID_metka`
-  ADD PRIMARY KEY (`код`),
-  ADD KEY `статус_активности` (`статус_активности`);
+  ADD PRIMARY KEY (`код`);
 
 --
 -- Индексы таблицы `status_active`
@@ -236,6 +246,12 @@ ALTER TABLE `history_visit`
   MODIFY `код` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT для таблицы `list_access`
+--
+ALTER TABLE `list_access`
+  MODIFY `код` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT для таблицы `RFID_metka`
 --
 ALTER TABLE `RFID_metka`
@@ -261,7 +277,8 @@ ALTER TABLE `type_car`
 -- Ограничения внешнего ключа таблицы `cars`
 --
 ALTER TABLE `cars`
-  ADD CONSTRAINT `cars_ibfk_1` FOREIGN KEY (`тип_машины`) REFERENCES `type_car` (`код`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `cars_ibfk_1` FOREIGN KEY (`водитель`) REFERENCES `chauffeur` (`код`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `cars_ibfk_2` FOREIGN KEY (`тип_машины`) REFERENCES `type_car` (`код`) ON UPDATE CASCADE;
 
 --
 -- Ограничения внешнего ключа таблицы `cars_with_RFID`
@@ -269,19 +286,19 @@ ALTER TABLE `cars`
 ALTER TABLE `cars_with_RFID`
   ADD CONSTRAINT `cars_with_rfid_ibfk_1` FOREIGN KEY (`№_машины`) REFERENCES `cars` (`код`) ON UPDATE CASCADE,
   ADD CONSTRAINT `cars_with_rfid_ibfk_2` FOREIGN KEY (`epc`) REFERENCES `RFID_metka` (`код`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `cars_with_rfid_ibfk_4` FOREIGN KEY (`водитель`) REFERENCES `chauffeur` (`код`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `cars_with_rfid_ibfk_3` FOREIGN KEY (`статус_активности`) REFERENCES `status_active` (`код`) ON UPDATE CASCADE;
 
 --
 -- Ограничения внешнего ключа таблицы `history_visit`
 --
 ALTER TABLE `history_visit`
-  ADD CONSTRAINT `history_visit_ibfk_2` FOREIGN KEY (`машина`) REFERENCES `cars_with_RFID` (`код`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `history_visit_ibfk_1` FOREIGN KEY (`epc`) REFERENCES `RFID_metka` (`код`) ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `RFID_metka`
+-- Ограничения внешнего ключа таблицы `list_access`
 --
-ALTER TABLE `RFID_metka`
-  ADD CONSTRAINT `rfid_metka_ibfk_1` FOREIGN KEY (`статус_активности`) REFERENCES `status_active` (`код`) ON UPDATE CASCADE;
+ALTER TABLE `list_access`
+  ADD CONSTRAINT `list_access_ibfk_1` FOREIGN KEY (`номер_машины`) REFERENCES `cars_with_RFID` (`код`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

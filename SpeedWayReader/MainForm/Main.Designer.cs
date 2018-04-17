@@ -37,8 +37,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.DGHistoryVisit = new System.Windows.Forms.DataGridView();
             this.PanelNumber = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.BoxNumber = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.machine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typ_visit = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -103,11 +103,19 @@
             this.PanelNumber.Controls.Add(this.BoxNumber);
             this.PanelNumber.Controls.Add(this.label1);
             this.PanelNumber.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PanelNumber.Location = new System.Drawing.Point(709, 12);
+            this.PanelNumber.Location = new System.Drawing.Point(698, 12);
             this.PanelNumber.Name = "PanelNumber";
-            this.PanelNumber.Size = new System.Drawing.Size(286, 69);
+            this.PanelNumber.Size = new System.Drawing.Size(297, 69);
             this.PanelNumber.TabIndex = 12;
             this.PanelNumber.Tag = "";
+            // 
+            // BoxNumber
+            // 
+            this.BoxNumber.Location = new System.Drawing.Point(170, 21);
+            this.BoxNumber.Name = "BoxNumber";
+            this.BoxNumber.ReadOnly = true;
+            this.BoxNumber.Size = new System.Drawing.Size(110, 26);
+            this.BoxNumber.TabIndex = 1;
             // 
             // label1
             // 
@@ -117,14 +125,6 @@
             this.label1.Size = new System.Drawing.Size(161, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Распознанный номер";
-            // 
-            // BoxNumber
-            // 
-            this.BoxNumber.Location = new System.Drawing.Point(164, 21);
-            this.BoxNumber.Name = "BoxNumber";
-            this.BoxNumber.ReadOnly = true;
-            this.BoxNumber.Size = new System.Drawing.Size(110, 26);
-            this.BoxNumber.TabIndex = 1;
             // 
             // Data
             // 
@@ -151,7 +151,7 @@
             this.typ_visit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.typ_visit.DefaultCellStyle = dataGridViewCellStyle7;
-            this.typ_visit.HeaderText = "Въезд/выезд";
+            this.typ_visit.HeaderText = "Тип проезда";
             this.typ_visit.Name = "typ_visit";
             this.typ_visit.ReadOnly = true;
             // 
@@ -160,7 +160,7 @@
             this.access_typ.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.access_typ.DefaultCellStyle = dataGridViewCellStyle8;
-            this.access_typ.HeaderText = "Разрешено/Не разрешено";
+            this.access_typ.HeaderText = "Доступ";
             this.access_typ.Name = "access_typ";
             this.access_typ.ReadOnly = true;
             // 
