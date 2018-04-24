@@ -28,7 +28,7 @@ namespace MainForm
                 // Подключение по введенному IP или имени  считывателя
                 //string hostname = Convert.ToString(TextIP.Text);(снять)
                 //reader.Connect(hostname);//(снять)
-                if (true)//reader.IsConnected(заменить на true)
+                if (false)//reader.IsConnected(заменить на true)
                 {
                     Random rand = new Random();
                     TimerTags.Enabled = true;
@@ -50,6 +50,7 @@ namespace MainForm
                     //reader.Disconnect();(снять)
                     TimerTags.Enabled = false;
                     fsettings.ShowDialog();
+                    TimerTags.Enabled = true;
                 }
             }
             catch (OctaneSdkException ex)

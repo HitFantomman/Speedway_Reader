@@ -32,7 +32,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.BtnEnter = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.BoxLogin = new System.Windows.Forms.TextBox();
+            this.BoxLogin = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // BoxPassword
@@ -75,10 +75,14 @@
             // 
             // BoxLogin
             // 
-            this.BoxLogin.Location = new System.Drawing.Point(124, 78);
+            this.BoxLogin.FormattingEnabled = true;
+            this.BoxLogin.Items.AddRange(new object[] {
+            "user"});
+            this.BoxLogin.Location = new System.Drawing.Point(124, 75);
             this.BoxLogin.Name = "BoxLogin";
-            this.BoxLogin.Size = new System.Drawing.Size(237, 26);
-            this.BoxLogin.TabIndex = 6;
+            this.BoxLogin.Size = new System.Drawing.Size(237, 27);
+            this.BoxLogin.TabIndex = 7;
+            this.BoxLogin.Text = "user";
             // 
             // EnterToSystem
             // 
@@ -107,6 +111,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button BtnEnter;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox BoxLogin;
+        private System.Windows.Forms.ComboBox BoxLogin;
     }
 }
