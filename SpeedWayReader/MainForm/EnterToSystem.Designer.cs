@@ -77,7 +77,8 @@
             // 
             this.BoxLogin.FormattingEnabled = true;
             this.BoxLogin.Items.AddRange(new object[] {
-            "user"});
+            "user",
+            "administrator"});
             this.BoxLogin.Location = new System.Drawing.Point(124, 75);
             this.BoxLogin.Name = "BoxLogin";
             this.BoxLogin.Size = new System.Drawing.Size(237, 27);

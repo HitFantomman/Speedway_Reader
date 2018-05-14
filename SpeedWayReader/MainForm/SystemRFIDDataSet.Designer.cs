@@ -430,8 +430,8 @@ namespace MainForm {
                         this.tablecars_with_RFID.статус_активностиColumn}, false);
             this.Relations.Add(this.relationcars_with_rfid_ibfk_3);
             this.relationhistory_visit_ibfk_1 = new global::System.Data.DataRelation("history_visit_ibfk_1", new global::System.Data.DataColumn[] {
-                        this.tableRFID_metka.кодColumn}, new global::System.Data.DataColumn[] {
-                        this.tablehistory_visit.epcColumn}, false);
+                        this.tablecars.кодColumn}, new global::System.Data.DataColumn[] {
+                        this.tablehistory_visit.номер_машиныColumn}, false);
             this.Relations.Add(this.relationhistory_visit_ibfk_1);
             this.relationlist_access_ibfk_1 = new global::System.Data.DataRelation("list_access_ibfk_1", new global::System.Data.DataColumn[] {
                         this.tablecars_with_RFID.кодColumn}, new global::System.Data.DataColumn[] {
@@ -745,8 +745,6 @@ namespace MainForm {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnкод}, true));
                 this.columnкод.AutoIncrement = true;
-                this.columnкод.AutoIncrementSeed = -1;
-                this.columnкод.AutoIncrementStep = -1;
                 this.columnкод.AllowDBNull = false;
                 this.columnкод.Unique = true;
                 this.columnномер_машины.AllowDBNull = false;
@@ -1074,8 +1072,6 @@ namespace MainForm {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnкод}, true));
                 this.columnкод.AutoIncrement = true;
-                this.columnкод.AutoIncrementSeed = -1;
-                this.columnкод.AutoIncrementStep = -1;
                 this.columnкод.AllowDBNull = false;
                 this.columnкод.Unique = true;
                 this.columnдата_записи.AllowDBNull = false;
@@ -1397,8 +1393,6 @@ namespace MainForm {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnкод}, true));
                 this.columnкод.AutoIncrement = true;
-                this.columnкод.AutoIncrementSeed = -1;
-                this.columnкод.AutoIncrementStep = -1;
                 this.columnкод.AllowDBNull = false;
                 this.columnкод.Unique = true;
                 this.columnфамилия.AllowDBNull = false;
@@ -1542,7 +1536,7 @@ namespace MainForm {
             
             private global::System.Data.DataColumn columnдата_проезда;
             
-            private global::System.Data.DataColumn columnepc;
+            private global::System.Data.DataColumn columnномер_машины;
             
             private global::System.Data.DataColumn columnтип_проезда;
             
@@ -1597,9 +1591,9 @@ namespace MainForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn epcColumn {
+            public global::System.Data.DataColumn номер_машиныColumn {
                 get {
-                    return this.columnepc;
+                    return this.columnномер_машины;
                 }
             }
             
@@ -1648,15 +1642,15 @@ namespace MainForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public history_visitRow Addhistory_visitRow(System.DateTime дата_проезда, RFID_metkaRow parentRFID_metkaRowByhistory_visit_ibfk_1, short тип_проезда) {
+            public history_visitRow Addhistory_visitRow(System.DateTime дата_проезда, carsRow parentcarsRowByhistory_visit_ibfk_1, short тип_проезда) {
                 history_visitRow rowhistory_visitRow = ((history_visitRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         дата_проезда,
                         null,
                         тип_проезда};
-                if ((parentRFID_metkaRowByhistory_visit_ibfk_1 != null)) {
-                    columnValuesArray[2] = parentRFID_metkaRowByhistory_visit_ibfk_1[0];
+                if ((parentcarsRowByhistory_visit_ibfk_1 != null)) {
+                    columnValuesArray[2] = parentcarsRowByhistory_visit_ibfk_1[0];
                 }
                 rowhistory_visitRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowhistory_visitRow);
@@ -1689,7 +1683,7 @@ namespace MainForm {
             internal void InitVars() {
                 this.columnкод = base.Columns["код"];
                 this.columnдата_проезда = base.Columns["дата_проезда"];
-                this.columnepc = base.Columns["epc"];
+                this.columnномер_машины = base.Columns["номер_машины"];
                 this.columnтип_проезда = base.Columns["тип_проезда"];
             }
             
@@ -1700,19 +1694,17 @@ namespace MainForm {
                 base.Columns.Add(this.columnкод);
                 this.columnдата_проезда = new global::System.Data.DataColumn("дата_проезда", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnдата_проезда);
-                this.columnepc = new global::System.Data.DataColumn("epc", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnepc);
+                this.columnномер_машины = new global::System.Data.DataColumn("номер_машины", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnномер_машины);
                 this.columnтип_проезда = new global::System.Data.DataColumn("тип_проезда", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnтип_проезда);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnкод}, true));
                 this.columnкод.AutoIncrement = true;
-                this.columnкод.AutoIncrementSeed = -1;
-                this.columnкод.AutoIncrementStep = -1;
                 this.columnкод.AllowDBNull = false;
                 this.columnкод.Unique = true;
                 this.columnдата_проезда.AllowDBNull = false;
-                this.columnepc.AllowDBNull = false;
+                this.columnномер_машины.AllowDBNull = false;
                 this.columnтип_проезда.AllowDBNull = false;
             }
             
@@ -2002,8 +1994,6 @@ namespace MainForm {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnкод}, true));
                 this.columnкод.AutoIncrement = true;
-                this.columnкод.AutoIncrementSeed = -1;
-                this.columnкод.AutoIncrementStep = -1;
                 this.columnкод.AllowDBNull = false;
                 this.columnкод.Unique = true;
                 this.columnномер_машины.AllowDBNull = false;
@@ -2279,8 +2269,6 @@ namespace MainForm {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnкод}, true));
                 this.columnкод.AutoIncrement = true;
-                this.columnкод.AutoIncrementSeed = -1;
-                this.columnкод.AutoIncrementStep = -1;
                 this.columnкод.AllowDBNull = false;
                 this.columnкод.Unique = true;
                 this.columnepc.AllowDBNull = false;
@@ -2555,8 +2543,6 @@ namespace MainForm {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnкод}, true));
                 this.columnкод.AutoIncrement = true;
-                this.columnкод.AutoIncrementSeed = -1;
-                this.columnкод.AutoIncrementStep = -1;
                 this.columnкод.AllowDBNull = false;
                 this.columnкод.Unique = true;
                 this.columnстатус.AllowDBNull = false;
@@ -2831,8 +2817,6 @@ namespace MainForm {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnкод}, true));
                 this.columnкод.AutoIncrement = true;
-                this.columnкод.AutoIncrementSeed = -1;
-                this.columnкод.AutoIncrementStep = -1;
                 this.columnкод.AllowDBNull = false;
                 this.columnкод.Unique = true;
                 this.columnтип.AllowDBNull = false;
@@ -3050,6 +3034,17 @@ namespace MainForm {
                 }
                 else {
                     return ((cars_with_RFIDRow[])(base.GetChildRows(this.Table.ChildRelations["cars_with_rfid_ibfk_1"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public history_visitRow[] Gethistory_visitRows() {
+                if ((this.Table.ChildRelations["history_visit_ibfk_1"] == null)) {
+                    return new history_visitRow[0];
+                }
+                else {
+                    return ((history_visitRow[])(base.GetChildRows(this.Table.ChildRelations["history_visit_ibfk_1"])));
                 }
             }
         }
@@ -3287,12 +3282,12 @@ namespace MainForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int epc {
+            public int номер_машины {
                 get {
-                    return ((int)(this[this.tablehistory_visit.epcColumn]));
+                    return ((int)(this[this.tablehistory_visit.номер_машиныColumn]));
                 }
                 set {
-                    this[this.tablehistory_visit.epcColumn] = value;
+                    this[this.tablehistory_visit.номер_машиныColumn] = value;
                 }
             }
             
@@ -3309,9 +3304,9 @@ namespace MainForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RFID_metkaRow RFID_metkaRow {
+            public carsRow carsRow {
                 get {
-                    return ((RFID_metkaRow)(this.GetParentRow(this.Table.ParentRelations["history_visit_ibfk_1"])));
+                    return ((carsRow)(this.GetParentRow(this.Table.ParentRelations["history_visit_ibfk_1"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["history_visit_ibfk_1"]);
@@ -3422,17 +3417,6 @@ namespace MainForm {
                 }
                 else {
                     return ((cars_with_RFIDRow[])(base.GetChildRows(this.Table.ChildRelations["cars_with_rfid_ibfk_2"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public history_visitRow[] Gethistory_visitRows() {
-                if ((this.Table.ChildRelations["history_visit_ibfk_1"] == null)) {
-                    return new history_visitRow[0];
-                }
-                else {
-                    return ((history_visitRow[])(base.GetChildRows(this.Table.ChildRelations["history_visit_ibfk_1"])));
                 }
             }
         }
@@ -4383,6 +4367,80 @@ namespace MainForm.SystemRFIDDataSetTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "статус_активности";
             this._adapter.InsertCommand.Parameters.Add(param);
+            this._adapter.UpdateCommand = new global::Devart.Data.MySql.MySqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE       cars_with_RFID
+SET                `дата_записи` = :дата_записи, epc = :epc, `номер_машины` = :номер_машины, `статус_активности` = :статус_активности
+WHERE        (код = :Original_код) AND (`дата_записи` = :Original_дата_записи) AND (epc = :Original_epc) AND (`номер_машины` = :Original_номер_машины) AND (`статус_активности` = :Original_статус_активности)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "дата_записи";
+            param.DbType = global::System.Data.DbType.Date;
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.Date;
+            param.IsNullable = true;
+            param.SourceColumn = "дата_записи";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "epc";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.Int;
+            param.IsNullable = true;
+            param.SourceColumn = "epc";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "номер_машины";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.Int;
+            param.IsNullable = true;
+            param.SourceColumn = "номер_машины";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "статус_активности";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.Int;
+            param.IsNullable = true;
+            param.SourceColumn = "статус_активности";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "Original_код";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.Int;
+            param.IsNullable = true;
+            param.SourceColumn = "код";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "Original_дата_записи";
+            param.DbType = global::System.Data.DbType.Date;
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.Date;
+            param.IsNullable = true;
+            param.SourceColumn = "дата_записи";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "Original_epc";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.Int;
+            param.IsNullable = true;
+            param.SourceColumn = "epc";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "Original_номер_машины";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.Int;
+            param.IsNullable = true;
+            param.SourceColumn = "номер_машины";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "Original_статус_активности";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.Int;
+            param.IsNullable = true;
+            param.SourceColumn = "статус_активности";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4477,6 +4535,36 @@ namespace MainForm.SystemRFIDDataSetTableAdapters {
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(System.DateTime дата_записи, int epc, int номер_машины, int статус_активности, int Original_код, System.DateTime Original_дата_записи, int Original_epc, int Original_номер_машины, int Original_статус_активности) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(дата_записи));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(epc));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(номер_машины));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(статус_активности));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_код));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Original_дата_записи));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_epc));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_номер_машины));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_статус_активности));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
         }
@@ -5086,14 +5174,14 @@ namespace MainForm.SystemRFIDDataSetTableAdapters {
             tableMapping.DataSetTable = "history_visit";
             tableMapping.ColumnMappings.Add("код", "код");
             tableMapping.ColumnMappings.Add("дата_проезда", "дата_проезда");
-            tableMapping.ColumnMappings.Add("epc", "epc");
+            tableMapping.ColumnMappings.Add("номер_машины", "номер_машины");
             tableMapping.ColumnMappings.Add("тип_проезда", "тип_проезда");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Devart.Data.MySql.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM `systemrfid`.`history_visit` WHERE ((`код` = :Original_код) AND (`дат" +
-                "а_проезда` = :Original_дата_проезда) AND (`epc` = :Original_epc) AND (`тип_проез" +
-                "да` = :Original_тип_проезда))";
+                "а_проезда` = :Original_дата_проезда) AND (`номер_машины` = :Original_номер_машин" +
+                "ы) AND (`тип_проезда` = :Original_тип_проезда))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::Devart.Data.MySql.MySqlParameter param = new global::Devart.Data.MySql.MySqlParameter();
             param.ParameterName = "Original_код";
@@ -5112,11 +5200,11 @@ namespace MainForm.SystemRFIDDataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Devart.Data.MySql.MySqlParameter();
-            param.ParameterName = "Original_epc";
+            param.ParameterName = "Original_номер_машины";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlType = global::Devart.Data.MySql.MySqlType.Int;
             param.IsNullable = true;
-            param.SourceColumn = "epc";
+            param.SourceColumn = "номер_машины";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Devart.Data.MySql.MySqlParameter();
@@ -5129,8 +5217,8 @@ namespace MainForm.SystemRFIDDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Devart.Data.MySql.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `systemrfid`.`history_visit` (`дата_проезда`, `epc`, `тип_проезда`) V" +
-                "ALUES (:дата_проезда, :epc, :тип_проезда)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `systemrfid`.`history_visit` (`дата_проезда`, `номер_машины`, `тип_пр" +
+                "оезда`) VALUES (:дата_проезда, :номер_машины, :тип_проезда)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.MySql.MySqlParameter();
             param.ParameterName = "дата_проезда";
@@ -5140,11 +5228,11 @@ namespace MainForm.SystemRFIDDataSetTableAdapters {
             param.SourceColumn = "дата_проезда";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Devart.Data.MySql.MySqlParameter();
-            param.ParameterName = "epc";
+            param.ParameterName = "номер_машины";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlType = global::Devart.Data.MySql.MySqlType.Int;
             param.IsNullable = true;
-            param.SourceColumn = "epc";
+            param.SourceColumn = "номер_машины";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Devart.Data.MySql.MySqlParameter();
             param.ParameterName = "тип_проезда";
@@ -5155,7 +5243,7 @@ namespace MainForm.SystemRFIDDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Devart.Data.MySql.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `systemrfid`.`history_visit` SET `дата_проезда` = :дата_проезда, `epc` = :epc, `тип_проезда` = :тип_проезда WHERE ((`код` = :Original_код) AND (`дата_проезда` = :Original_дата_проезда) AND (`epc` = :Original_epc) AND (`тип_проезда` = :Original_тип_проезда))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `systemrfid`.`history_visit` SET `дата_проезда` = :дата_проезда, `номер_машины` = :номер_машины, `тип_проезда` = :тип_проезда WHERE ((`код` = :Original_код) AND (`дата_проезда` = :Original_дата_проезда) AND (`номер_машины` = :Original_номер_машины) AND (`тип_проезда` = :Original_тип_проезда))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.MySql.MySqlParameter();
             param.ParameterName = "дата_проезда";
@@ -5165,11 +5253,11 @@ namespace MainForm.SystemRFIDDataSetTableAdapters {
             param.SourceColumn = "дата_проезда";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.MySql.MySqlParameter();
-            param.ParameterName = "epc";
+            param.ParameterName = "номер_машины";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlType = global::Devart.Data.MySql.MySqlType.Int;
             param.IsNullable = true;
-            param.SourceColumn = "epc";
+            param.SourceColumn = "номер_машины";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.MySql.MySqlParameter();
             param.ParameterName = "тип_проезда";
@@ -5195,11 +5283,11 @@ namespace MainForm.SystemRFIDDataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.MySql.MySqlParameter();
-            param.ParameterName = "Original_epc";
+            param.ParameterName = "Original_номер_машины";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlType = global::Devart.Data.MySql.MySqlType.Int;
             param.IsNullable = true;
-            param.SourceColumn = "epc";
+            param.SourceColumn = "номер_машины";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.MySql.MySqlParameter();
@@ -5225,7 +5313,8 @@ namespace MainForm.SystemRFIDDataSetTableAdapters {
             this._commandCollection = new global::Devart.Data.MySql.MySqlCommand[1];
             this._commandCollection[0] = new global::Devart.Data.MySql.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT код, дата_проезда, epc, тип_проезда FROM SystemRFID.history_visit";
+            this._commandCollection[0].CommandText = "SELECT код, дата_проезда, номер_машины, тип_проезда FROM SystemRFID.history_visit" +
+                "";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5286,10 +5375,10 @@ namespace MainForm.SystemRFIDDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_код, System.DateTime Original_дата_проезда, int Original_epc, short Original_тип_проезда) {
+        public virtual int Delete(int Original_код, System.DateTime Original_дата_проезда, int Original_номер_машины, short Original_тип_проезда) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_код));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTime)(Original_дата_проезда));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_epc));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_номер_машины));
             this.Adapter.DeleteCommand.Parameters[3].Value = ((short)(Original_тип_проезда));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5311,9 +5400,9 @@ namespace MainForm.SystemRFIDDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(System.DateTime дата_проезда, int epc, short тип_проезда) {
+        public virtual int Insert(System.DateTime дата_проезда, int номер_машины, short тип_проезда) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(дата_проезда));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(epc));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(номер_машины));
             this.Adapter.InsertCommand.Parameters[2].Value = ((short)(тип_проезда));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5335,13 +5424,13 @@ namespace MainForm.SystemRFIDDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(System.DateTime дата_проезда, int epc, short тип_проезда, int Original_код, System.DateTime Original_дата_проезда, int Original_epc, short Original_тип_проезда) {
+        public virtual int Update(System.DateTime дата_проезда, int номер_машины, short тип_проезда, int Original_код, System.DateTime Original_дата_проезда, int Original_номер_машины, short Original_тип_проезда) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(дата_проезда));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(epc));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(номер_машины));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((short)(тип_проезда));
             this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_код));
             this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Original_дата_проезда));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_epc));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_номер_машины));
             this.Adapter.UpdateCommand.Parameters[6].Value = ((short)(Original_тип_проезда));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5858,6 +5947,34 @@ namespace MainForm.SystemRFIDDataSetTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "epc";
             this._adapter.InsertCommand.Parameters.Add(param);
+            this._adapter.UpdateCommand = new global::Devart.Data.MySql.MySqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE       RFID_metka\r\nSET                epc = :epc\r\nWHERE        (код = :Orig" +
+                "inal_код) AND (epc = :Original_epc)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "epc";
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.VarChar;
+            param.Size = 1024;
+            param.IsNullable = true;
+            param.SourceColumn = "epc";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "Original_код";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.Int;
+            param.IsNullable = true;
+            param.SourceColumn = "код";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "Original_epc";
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.VarChar;
+            param.Size = 1024;
+            param.IsNullable = true;
+            param.SourceColumn = "epc";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5953,6 +6070,40 @@ namespace MainForm.SystemRFIDDataSetTableAdapters {
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string epc, int Original_код, string Original_epc) {
+            if ((epc == null)) {
+                throw new global::System.ArgumentNullException("epc");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(epc));
+            }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_код));
+            if ((Original_epc == null)) {
+                throw new global::System.ArgumentNullException("Original_epc");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_epc));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
         }

@@ -28,11 +28,11 @@ namespace MainForm
                 // Подключение по введенному IP или имени  считывателя
                 //string hostname = Convert.ToString(TextIP.Text);(снять)
                 //reader.Connect(hostname);//(снять)
-                if (false)//reader.IsConnected(заменить на true)
+                if (true)//reader.IsConnected(заменить на true)
                 {
                     Random rand = new Random();
+                    TimerTags.Interval = rand.Next(10000, 15000);
                     TimerTags.Enabled = true;
-                    TimerTags.Interval = rand.Next(1000, 5000);
                     // Подготовка к считыванию
                     //if (!reader.QueryStatus().IsSingulating)(снять)
                     //{(снять)
@@ -171,22 +171,7 @@ namespace MainForm
             DateTime now = DateTime.Now;
             Random Ran = new Random();
             int car = Ran.Next(1, 4);
-            string carT = "";
-            switch (car)
-            {
-                case 1:
-                    carT = "Легковой";
-                    break;
-                case 2:
-                    carT = "Пассажирский";
-                    break;
-                case 3:
-                    carT = "Грузовой";
-                    break;
-                default:
-                    break;
-            }
-            string Nmachine = "а" + Convert.ToString(Ran.Next(100, 1000)) + "бв";
+            string carT = "а" + Ran.Next(0, 10) + Ran.Next(0, 10) + Ran.Next(0, 10)+"бв";
             int AntennaPortNumber = Ran.Next(1, 3);
             bool visit=new bool();
             visit=Convert.ToBoolean(Ran.Next(0, 2));
@@ -196,17 +181,24 @@ namespace MainForm
             string tvisit;
             if (AntennaPortNumber == 1) tvisit = "Въезд";
             else tvisit = "Выезд";
-            BoxNumber.Text = Nmachine;
+            DGHistoryVisit.Focus();
+            //JoinDTBindingSource.Add(now, carT, tvisit, avisit);
             DGHistoryVisit.Rows.Add(now, carT, tvisit, avisit);
+            BoxNumber.Text = DGHistoryVisit.CurrentRow.Cells[1].Value.ToString();
             //ListTags.Items.Add(counter + ") Дата и время: " + now + "\n   Номер антенны: " + AntennaPortNumber);
             //ListTags.Items.Add("\n   EPC: " + Epc + "\n   № машины: " + machine + "\n   Тип проезда: " + tvisit + "\n   Доступ: " + avisit);
-            //GridTags.Rows.(GridTags.Rows.GetNextRow, now, Epc, 0, AntennaPortNumber);
-            //if (visit == false)
-            //{
-            //    TimerTags.Enabled = false;
-            //    MessageBox.Show("Машине на проезде въезд/выезд запрещен!!!");
-            //    TimerTags.Enabled = true;
-            //}
+            if (visit == false)
+            {
+                if (AntennaPortNumber==1)
+                {
+                    MessageBox.Show("Машине на проезде въезд запрещен!!!");
+                }
+                else
+                {
+                    MessageBox.Show("Машине на проезде выезд запрещен!!!");
+                }
+                
+            }
         }
 
         private void ButtonClear_Click(object sender, EventArgs e)
@@ -231,6 +223,15 @@ namespace MainForm
             TimerTags.Enabled = false;
             try
             {
+                var result = MessageBox.Show("Вы точно хотите выйти?", "Выход из программы", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    e.Cancel = false;
+                }
+                else if (result == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
                 // Отключение считывания считывателя
                 //if (reader.QueryStatus().IsSingulating)(снять)
                 //{(снять)
@@ -249,7 +250,6 @@ namespace MainForm
                         //}(снять)
                         // Отсоединение от считывателя
                         //reader.Disconnect();(снять)
-                        Application.Exit();
                     }
                     catch (OctaneSdkException ex)
                     {
@@ -273,6 +273,21 @@ namespace MainForm
                 // Ошибки программы
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void DGHistoryVisit_MouseClick(object sender, MouseEventArgs e)
+        {
+            BoxNumber.Text = DGHistoryVisit.CurrentRow.Cells[1].Value.ToString();
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
